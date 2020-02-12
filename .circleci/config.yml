@@ -40,8 +40,39 @@ jobs:
                       else
                           yarn test --ci --maxWorkers=2
                       fi
+
+    deploy_firebase:
+        <<: *defaults
+
+        steps:
+            - checkout
+
+            # Download and cache dependencies
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      # fallback to using the latest cache if no exact match is found
+                      - v1-dependencies-
+
+            - run: yarn install
+            - run: yarn deploy:library --token=$FIREBASE_TOKEN
+
+            - run:
+                  name: 'Build Project'
+                  command: 'yarn build'
+
+            - run:
+                  name: 'Deploy to Firebase Hosting'
+                  command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+
 workflows:
     version: 2
     build_and_test:
         jobs:
             - build_and_test
+            - deploy_firebase:
+                  requires:
+                      - build_and_test
+                  filters:
+                      branches:
+                          only: master

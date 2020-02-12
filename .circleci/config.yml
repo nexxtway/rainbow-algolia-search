@@ -55,7 +55,6 @@ jobs:
                       - v1-dependencies-
 
             - run: yarn install
-            - run: yarn deploy:library --token=$FIREBASE_TOKEN
 
             - run:
                   name: 'Build Project'

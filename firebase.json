@@ -1,6 +1,6 @@
 {
     "hosting": {
-        "site": "rainbow-argolia-search-nexxt",
+        "site": "rainbow-algolia-search",
         "public": "build",
         "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
         "rewrites": [

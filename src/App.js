@@ -8,6 +8,7 @@ function App() {
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>Hello React</p>
+                <p>Wellcome to argolia books search</p>
             </header>
         </div>
     );

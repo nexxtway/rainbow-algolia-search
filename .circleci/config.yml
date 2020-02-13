@@ -1,0 +1,77 @@
+# JavaScript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+
+defaults: &defaults
+    working_directory: ~/repo
+    docker:
+        - image: circleci/node:10.15
+
+jobs:
+    build_and_test:
+        <<: *defaults
+
+        steps:
+            - checkout
+
+            # Download and cache dependencies
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      # fallback to using the latest cache if no exact match is found
+                      - v1-dependencies-
+
+            - run: yarn install
+
+            - save_cache:
+                  paths:
+                      - node_modules
+                  key: v1-dependencies-{{ checksum "yarn.lock" }}
+
+            - run: yarn lint
+
+            - run:
+                  name: run test
+                  command: |
+                      if [ -n "$COVERALLS_REPO_TOKEN" ]; then
+                          yarn test --ci --maxWorkers=2 --coverage --coverageReporters=text-lcov | ./node_modules/coveralls/bin/coveralls.js
+                      else
+                          yarn test --ci --maxWorkers=2
+                      fi
+
+    deploy_firebase:
+        <<: *defaults
+
+        steps:
+            - checkout
+
+            # Download and cache dependencies
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "yarn.lock" }}
+                      # fallback to using the latest cache if no exact match is found
+                      - v1-dependencies-
+
+            - run: yarn install
+
+            - run:
+                  name: 'Build Project'
+                  command: 'yarn build'
+
+            - run:
+                  name: 'Deploy to Firebase Hosting'
+                  command: './node_modules/.bin/firebase deploy --token=$FIREBASE_TOKEN'
+
+workflows:
+    version: 2
+    build_and_test:
+        jobs:
+            - build_and_test
+            - deploy_firebase:
+                  requires:
+                      - build_and_test
+                  filters:
+                      branches:
+                          only: master

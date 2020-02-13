@@ -1,5 +1,5 @@
 {
-    "name": "rainbow-argolia-search",
+    "name": "rainbow-algolia-search",
     "version": "0.1.0",
     "private": true,
     "dependencies": {

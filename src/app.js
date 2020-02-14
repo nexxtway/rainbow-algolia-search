@@ -1,17 +1,22 @@
 import React from 'react';
 import { FirebaseProvider } from 'rainbow-firebase-hooks';
 import { Application } from 'react-rainbow-components';
+import { BrowserRouter as Router } from 'react-router-dom';
 import firebaseApp from './firebase';
-import Books from './components/books';
+import AppRoutes from './hoc/routes';
+import Layout from './hoc/layout';
 
-const value = { app: firebaseApp };
+const firebaseProviderSettings = { app: firebaseApp };
 
 function App() {
     return (
-        <FirebaseProvider value={value}>
+        <FirebaseProvider value={firebaseProviderSettings}>
             <Application>
-                {/* Routes */}
-                <Books />
+                <Router>
+                    <Layout>
+                        <AppRoutes />
+                    </Layout>
+                </Router>
             </Application>
         </FirebaseProvider>
     );

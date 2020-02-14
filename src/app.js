@@ -11,13 +11,13 @@ const firebaseProviderSettings = { app: firebaseApp };
 function App() {
     return (
         <FirebaseProvider value={firebaseProviderSettings}>
-            <Router>
-                <Application>
+            <Application>
+                <Router>
                     <Layout>
                         <AppRoutes />
                     </Layout>
-                </Application>
-            </Router>
+                </Router>
+            </Application>
         </FirebaseProvider>
     );
 }

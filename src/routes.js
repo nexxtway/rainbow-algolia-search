@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Home from '../pages/home';
-import BookDetail from '../pages/book-detail';
+import Home from './pages/home';
+import BookDetail from './pages/book-detail';
 
 const AppRoutes = () => {
     return (

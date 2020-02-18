@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input } from 'react-rainbow-components';
+import { SearchIcon } from '../../components/icons';
 import {
     IntroWrapper,
     IntroPresentation,
@@ -22,7 +23,12 @@ const Home = () => {
             <div>
                 <InputCallToAction>Access 250,100 books</InputCallToAction>
                 <InputWrapper>
-                    <Input placeholder="Find a Book" />
+                    <Input
+                        placeholder="Find a Book"
+                        type="search"
+                        icon={<SearchIcon />}
+                        iconPosition="right"
+                    />
                 </InputWrapper>
 
                 {recentBook ? (

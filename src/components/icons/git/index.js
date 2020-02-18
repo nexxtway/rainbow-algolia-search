@@ -36,7 +36,7 @@ const GitIcon = props => {
 
 GitIcon.propTypes = {
     className: PropTypes.string,
-    style: PropTypes.oneOfType([PropTypes.object]),
+    style: PropTypes.object,
 };
 GitIcon.defaultProps = {
     className: undefined,

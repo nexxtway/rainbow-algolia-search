@@ -43,7 +43,7 @@ const SunIcon = props => {
 
 SunIcon.propTypes = {
     className: PropTypes.string,
-    style: PropTypes.oneOfType([PropTypes.object]),
+    style: PropTypes.object,
 };
 SunIcon.defaultProps = {
     className: undefined,

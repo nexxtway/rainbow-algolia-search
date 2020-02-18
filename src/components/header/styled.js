@@ -66,6 +66,4 @@ export const GitImg = styled(GitIcon)`
     width: 32px;
     height: 32px;
     transition: all 350ms ease;
-    border-radius: 50%;
-    background-color: #061c3f;
 `;

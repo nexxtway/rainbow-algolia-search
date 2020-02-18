@@ -2,6 +2,7 @@ import React from 'react';
 import { HeadingLabel } from '../../styled';
 import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } from './styled';
 import RecentItem from '../../components/recent-item';
+import { SearchIcon } from '../../components/icons';
 
 const Home = () => {
     return (
@@ -12,7 +13,7 @@ const Home = () => {
             </IntroPresentation>
             <div>
                 <HeadingLabel>Access 250,100 books</HeadingLabel>
-                <InputWrapper />
+                <InputWrapper iconPosition="right" icon={<SearchIcon />} />
                 <RecentItem />
             </div>
         </IntroWrapper>

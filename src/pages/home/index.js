@@ -1,16 +1,7 @@
 import React from 'react';
 import { Input } from 'react-rainbow-components';
-import {
-    IntroWrapper,
-    IntroPresentation,
-    BookImg,
-    IntroLabel,
-    InputCallToAction,
-    RecentItem,
-    InputWrapper,
-} from './styled';
-
-const recentBook = 'You Don’t Know JS';
+import { InputCallToAction } from '../../styled';
+import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } from './styled';
 
 const Home = () => {
     return (
@@ -24,13 +15,6 @@ const Home = () => {
                 <InputWrapper>
                     <Input placeholder="Find a Book" />
                 </InputWrapper>
-
-                {recentBook ? (
-                    <InputCallToAction>
-                        Recent Book:
-                        <RecentItem href="#">{recentBook}</RecentItem>
-                    </InputCallToAction>
-                ) : null}
             </div>
         </IntroWrapper>
     );

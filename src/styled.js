@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InputCallToAction = styled.div`
+export const HeadingLabel = styled.div`
     margin-bottom: 7px;
     color: rgba(96, 112, 127, 0.5);
     line-height: 1em;

@@ -1,7 +1,6 @@
 import React from 'react';
-import { InputCallToAction } from '../../styled';
-import { IntroWrapper, IntroPresentation, BookImg, IntroLabel } from './styled';
-import SearchInput from '../../components/search-input';
+import { HeadingLabel } from '../../styled';
+import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } from './styled';
 import RecentItem from '../../components/recent-item';
 
 const Home = () => {
@@ -12,8 +11,8 @@ const Home = () => {
                 <IntroLabel>Find Books</IntroLabel>
             </IntroPresentation>
             <div>
-                <InputCallToAction>Access 250,100 books</InputCallToAction>
-                <SearchInput />
+                <HeadingLabel>Access 250,100 books</HeadingLabel>
+                <InputWrapper />
                 <RecentItem />
             </div>
         </IntroWrapper>

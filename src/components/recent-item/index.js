@@ -1,19 +1,28 @@
 import React from 'react';
-import { InputCallToAction } from '../../styled';
+import PropTypes from 'prop-types';
+import { HeadingLabel } from '../../styled';
 import { RecentItemLink } from './styled';
 
-const recentItem = 'You Don’t Know JS';
+const RecentItem = props => {
+    const { recentItem } = props;
 
-const RecentItem = () => {
     if (recentItem) {
         return (
-            <InputCallToAction>
+            <HeadingLabel>
                 Recent Book:
                 <RecentItemLink href="#">{recentItem}</RecentItemLink>
-            </InputCallToAction>
+            </HeadingLabel>
         );
     }
     return null;
 };
 
 export default RecentItem;
+
+RecentItem.propTypes = {
+    recentItem: PropTypes.string,
+};
+
+RecentItem.defaultProps = {
+    recentItem: '',
+};

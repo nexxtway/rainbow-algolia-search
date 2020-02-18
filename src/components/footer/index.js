@@ -1,14 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import { FooterWrapper, FooterContainer, FooterCopyright } from './styled';
 
-const Styled = styled.div`
-    width: 100%;
-    background: red;
-    color: white;
-`;
+const year = new Date().getFullYear();
 
 const Footer = () => {
-    return <Styled>Footer</Styled>;
+    return (
+        <FooterWrapper>
+            <FooterContainer>
+                <FooterCopyright>© Copyright Nexxtway {year}</FooterCopyright>
+            </FooterContainer>
+        </FooterWrapper>
+    );
 };
 
 export default Footer;

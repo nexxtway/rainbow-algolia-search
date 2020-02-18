@@ -1,24 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import { MainWrapper, Container } from './styled';
 import Header from '../header';
 import Footer from '../footer';
-
-const MainWrapper = styled.main`
-    width: 100%;
-`;
-
-const InnerWrapper = styled.main`
-    height: 600px;
-    background: gray;
-    color: white;
-`;
 
 const Layout = ({ children }) => (
     <>
         <MainWrapper>
             <Header />
-            <InnerWrapper>{children}</InnerWrapper>
+            <Container>{children}</Container>
             <Footer />
         </MainWrapper>
     </>

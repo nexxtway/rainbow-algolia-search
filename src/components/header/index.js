@@ -1,14 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const Styled = styled.div`
-    width: 100%;
-    background: blue;
-    color: white;
-`;
+import {
+    HeaderWrapper,
+    HeaderContainer,
+    LogoWrapper,
+    Logo,
+    TopActions,
+    TopAction,
+    MoonImg,
+    SunImg,
+    GitImg,
+} from './styled';
 
 const Header = () => {
-    return <Styled>Header</Styled>;
+    return (
+        <HeaderWrapper>
+            <HeaderContainer>
+                <LogoWrapper>
+                    <Logo src="assets/logo.svg" />
+                </LogoWrapper>
+                <TopActions>
+                    <TopAction href="#">
+                        <MoonImg />
+                        <SunImg />
+                    </TopAction>
+                    <TopAction href="#">
+                        <GitImg />
+                    </TopAction>
+                </TopActions>
+            </HeaderContainer>
+        </HeaderWrapper>
+    );
 };
 
 export default Header;

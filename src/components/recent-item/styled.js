@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const RecentItem = styled.a`
+export const RecentItemLink = styled.a`
     padding-right: 25px;
     background-image: url('/assets/icons/forward-arrow-curved.svg');
     background-position: 100% 50%;

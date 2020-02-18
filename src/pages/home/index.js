@@ -1,7 +1,8 @@
 import React from 'react';
-import { Input } from 'react-rainbow-components';
 import { InputCallToAction } from '../../styled';
-import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } from './styled';
+import { IntroWrapper, IntroPresentation, BookImg, IntroLabel } from './styled';
+import SearchInput from '../../components/search-input';
+import RecentItem from '../../components/recent-item';
 
 const Home = () => {
     return (
@@ -12,9 +13,8 @@ const Home = () => {
             </IntroPresentation>
             <div>
                 <InputCallToAction>Access 250,100 books</InputCallToAction>
-                <InputWrapper>
-                    <Input placeholder="Find a Book" />
-                </InputWrapper>
+                <SearchInput />
+                <RecentItem />
             </div>
         </IntroWrapper>
     );

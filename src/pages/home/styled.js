@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Input } from 'react-rainbow-components';
 import { BookIcon } from '../../components/icons';
 
 export const IntroWrapper = styled.div`
@@ -83,7 +84,7 @@ export const RecentItem = styled.a`
     }
 `;
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled(Input)`
     margin: 0 auto 16px auto;
     max-width: 860px;
 `;

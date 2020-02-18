@@ -36,7 +36,7 @@ const ForwardArrowCurvedIcon = props => {
 
 ForwardArrowCurvedIcon.propTypes = {
     className: PropTypes.string,
-    style: PropTypes.oneOfType([PropTypes.object]),
+    style: PropTypes.object,
 };
 ForwardArrowCurvedIcon.defaultProps = {
     className: undefined,

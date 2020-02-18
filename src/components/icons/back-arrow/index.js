@@ -36,7 +36,7 @@ const BackArrowIcon = props => {
 
 BackArrowIcon.propTypes = {
     className: PropTypes.string,
-    style: PropTypes.oneOfType([PropTypes.object]),
+    style: PropTypes.object,
 };
 BackArrowIcon.defaultProps = {
     className: undefined,

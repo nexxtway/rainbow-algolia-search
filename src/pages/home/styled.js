@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Input } from 'react-rainbow-components';
 import { BookIcon } from '../../components/icons';
 
 export const IntroWrapper = styled.div`
@@ -70,24 +71,6 @@ export const IntroLabel = styled.h1`
     }
 `;
 
-export const InputCallToAction = styled.div`
-    margin-bottom: 7px;
-    color: rgba(96, 112, 127, 0.5);
-    line-height: 1em;
-
-    @media screen and (max-width: 991px) {
-        font-size: 20px;
-    }
-
-    @media screen and (max-width: 767px) {
-        font-size: 18px;
-    }
-
-    @media screen and (max-width: 479px) {
-        font-size: 14px;
-    }
-`;
-
 export const RecentItem = styled.a`
     padding-right: 25px;
     background-image: url('/assets/icons/forward-arrow-curved.svg');
@@ -101,7 +84,7 @@ export const RecentItem = styled.a`
     }
 `;
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled(Input)`
     margin: 0 auto 16px auto;
     max-width: 860px;
 `;

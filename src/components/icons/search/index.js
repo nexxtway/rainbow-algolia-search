@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MoonIcon = props => {
+const Search = props => {
     const { className, style } = props;
 
     return (
@@ -15,8 +15,6 @@ const MoonIcon = props => {
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
         >
-            <title>search</title>
-            <desc>Created with Sketch.</desc>
             <g id="layout" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g
                     id="main_dark"
@@ -60,14 +58,14 @@ const MoonIcon = props => {
     );
 };
 
-MoonIcon.propTypes = {
+Search.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
 };
 
-MoonIcon.defaultProps = {
+Search.defaultProps = {
     className: undefined,
     style: undefined,
 };
 
-export default MoonIcon;
+export default Search;

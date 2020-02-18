@@ -10,14 +10,15 @@
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/forbid-prop-types": [
-            0,
-            { "forbid": [], "checkContextTypes": false, "checkChildContextTypes": false }
+            1,
+            { "forbid": [], "checkContextTypes": true, "checkChildContextTypes": false }
         ],
         "jest/no-disabled-tests": "warn",
         "jest/no-focused-tests": "error",
         "jest/no-identical-title": "error",
         "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error"
+        "jest/valid-expect": "error",
+        "import/prefer-default-export": 0
     },
     "env": {
         "browser": true,

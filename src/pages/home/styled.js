@@ -48,8 +48,8 @@ export const BookImg = styled(BookIcon)`
 `;
 
 export const IntroLabel = styled.h1`
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     transition: all 350ms ease;
     font-family: Montserrat, sans-serif;
     font-size: 64px;

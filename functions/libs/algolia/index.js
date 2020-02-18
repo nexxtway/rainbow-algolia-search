@@ -6,7 +6,7 @@ const collectionIndex = algoliaClient.initIndex(ALGOLIA_INDEX_NAME);
 module.exports.writeDocumentToAlgolia = function(id, data) {
     const record = data;
     record.objectID = id;
-    return collectionIndex.saveObject(newValue);
+    return collectionIndex.saveObject(record);
 };
 
 module.exports.deleteDocumentInAlgolia = function(id) {

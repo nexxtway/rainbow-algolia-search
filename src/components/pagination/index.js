@@ -1,10 +1,28 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { PaginationWrapper } from './styled';
 
-const Styled = styled.div``;
+const Pagination = props => {
+    const { pages, defaultActivePage } = props;
+    const [activePage, setActivePage] = useState(defaultActivePage);
 
-const Pagination = () => {
-    return <Styled>Pagination</Styled>;
+    return (
+        <PaginationWrapper
+            pages={pages}
+            activePage={activePage}
+            onChange={(e, page) => setActivePage(page)}
+        />
+    );
 };
 
 export default Pagination;
+
+Pagination.propTypes = {
+    pages: PropTypes.number,
+    defaultActivePage: PropTypes.number,
+};
+
+Pagination.defaultProps = {
+    pages: 0,
+    defaultActivePage: 1,
+};

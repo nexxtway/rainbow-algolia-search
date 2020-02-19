@@ -1,5 +1,6 @@
 const functions = require('firebase-functions');
 const { writeDocumentToAlgolia } = require('../../../libs/algolia');
+const { getRatingCount } = require('../../helpers/getRatingCount');
 
 module.exports = functions.firestore.document('books/{uid}').onUpdate((change, context) => {
     const {
@@ -10,10 +11,10 @@ module.exports = functions.firestore.document('books/{uid}').onUpdate((change, c
         releaseDate,
         isbn,
         language,
-        starts,
+        stars,
     } = change.after.data();
 
-    const ratingCount = Object.values(starts).reduce((pv, cv) => Number(pv) + Number(cv), 0);
+    const ratingCount = getRatingCount(stars);
 
     const recordData = {
         title,

@@ -5,6 +5,7 @@ import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } fr
 import RecentItem from '../../components/recent-item';
 import { SearchIcon } from '../../components/icons';
 import SearchResultItem from '../../components/search-result-item';
+import SearchResultsDescription from '../../components/search-results-description';
 import searchClient from '../../algoliaClient';
 
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
                     <HeadingLabel>Access 250,100 books</HeadingLabel>
                     <InputWrapper iconPosition="right" icon={<SearchIcon />} />
                     <RecentItem />
+                    <SearchResultsDescription />
                 </div>
                 <SearchResultItem />
             </IntroWrapper>

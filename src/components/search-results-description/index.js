@@ -1,10 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import { ResultsDescription, ResultsTotalsDescription } from './styled';
+import SearchResultsTotals from '../search-results-totals';
+import Pagination from '../pagination';
 
-const Styled = styled.div``;
+const search = 'You Dont Know JS';
 
 const SearchResultsDescription = () => {
-    return <Styled>SearchResultsDescription</Styled>;
+    return (
+        <ResultsDescription>
+            <ResultsTotalsDescription>
+                <SearchResultsTotals found={86} search={search} />
+            </ResultsTotalsDescription>
+            <Pagination pages={5} defaultActivePage={3} />
+        </ResultsDescription>
+    );
 };
 
 export default SearchResultsDescription;

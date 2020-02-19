@@ -10,7 +10,10 @@ module.exports = functions.firestore.document('books/{uid}').onUpdate((change, c
         releaseDate,
         isbn,
         language,
+        starts,
     } = change.after.data();
+
+    const ratingCount = Object.values(starts).reduce((pv, cv) => Number(pv) + Number(cv), 0);
 
     const recordData = {
         title,
@@ -20,6 +23,7 @@ module.exports = functions.firestore.document('books/{uid}').onUpdate((change, c
         releaseDate,
         isbn,
         language,
+        ratingCount,
     };
 
     return writeDocumentToAlgolia(change.after.id, recordData);

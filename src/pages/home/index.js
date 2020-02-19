@@ -5,7 +5,14 @@ import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } fr
 import RecentItem from '../../components/recent-item';
 import { SearchIcon } from '../../components/icons';
 import SearchResultItem from '../../components/search-result-item';
+import ResultsAlgolia from '../../algolia-components/results';
 import searchClient from '../../algoliaClient';
+import ResultCount from '../../algolia-components/result-count';
+import {
+    DisplayIfQueryInput,
+    DisplayIfNotQueryInput,
+    DisplayIfResults,
+} from '../../algolia-components/conditional-display';
 
 const Home = () => {
     return (
@@ -16,12 +23,20 @@ const Home = () => {
                     <IntroLabel>Find Books</IntroLabel>
                 </IntroPresentation>
                 <div>
-                    <Configure hitsPerPage={8} />
-                    <HeadingLabel>Access 250,100 books</HeadingLabel>
+                    <Configure hitsPerPage={3} />
+                    <DisplayIfNotQueryInput>
+                        <HeadingLabel>
+                            Access <ResultCount /> books
+                        </HeadingLabel>
+                    </DisplayIfNotQueryInput>
                     <InputWrapper iconPosition="right" icon={<SearchIcon />} />
                     <RecentItem />
                 </div>
-                <SearchResultItem />
+                <DisplayIfQueryInput>
+                    <DisplayIfResults>
+                        <ResultsAlgolia component={SearchResultItem} />
+                    </DisplayIfResults>
+                </DisplayIfQueryInput>
             </IntroWrapper>
         </InstantSearch>
     );

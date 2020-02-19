@@ -3,6 +3,7 @@ import { Input } from 'react-rainbow-components';
 import { connectSearchBox } from 'react-instantsearch-dom';
 import { SearchIcon } from '../../components/icons';
 
+// eslint-disable-next-line react/prop-types
 const SearchInputRainbowAlgoliaAdapter = ({ currentRefinement, refine }) => {
     return (
         <Input

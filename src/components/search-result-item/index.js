@@ -1,116 +1,82 @@
 import React from 'react';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
 import PropTypes from 'prop-types';
 import ItemCategories from '../item-categories';
-import {
-    ResultItemWrapper,
-    ResultItemContainer,
-    ResultItemContent,
-    ResultItemInfoWrapper,
-    ResultItemImg,
-    ResultItemInfo,
-    ResultItemTitle,
-    ResultItemInfoMeta,
-    ResultItemInfoMetaFeatured,
-    ResultItemInfoMetaValue,
-    ResultItemRatingWrapper,
-    ResultItemRatingLite,
-    ResultItemRating,
-    ResultItemRatingLabel,
-    ResultItemCategoriesWrapper,
-    ResultItemCategoriesLabel,
-} from './styled';
+import ItemRating from '../item-rating';
+import ItemInfo from '../item-info';
+import { Wrapper, LinkWrapper, FlexWrapper, RatingWrapper, CategoriesWrapper } from './styled';
 
 const SearchResultItem = props => {
     const {
-        className,
-        style,
+        objectID,
         title,
         authors,
-        publishedBy,
+        publisher,
         ratingCount,
         averageRating,
         language,
         cover,
         categories,
+        className,
+        style,
     } = props;
 
-    const hasCategories = !!categories && !!categories.length;
-    const hasAuthors = !!authors && !!authors.length;
-    const hasPublisher = !!publishedBy && !!publishedBy.length;
-    const hasLanguage = !!language && !!language.length;
+    const bookUrl = `/book/${objectID}`;
 
     return (
-        <ResultItemWrapper className={className} style={style}>
-            <ResultItemContainer>
-                <ResultItemContent>
-                    <ResultItemInfoWrapper>
-                        <ResultItemImg src={cover} />
-                        <ResultItemInfo>
-                            <ResultItemTitle>{title}</ResultItemTitle>
-                            <RenderIf isTrue={hasAuthors}>
-                                <ResultItemInfoMeta>
-                                    By:
-                                    <ResultItemInfoMetaFeatured>
-                                        {authors}
-                                    </ResultItemInfoMetaFeatured>
-                                </ResultItemInfoMeta>
-                            </RenderIf>
-                            <RenderIf isTrue={hasPublisher}>
-                                <ResultItemInfoMeta>
-                                    Published by:
-                                    <ResultItemInfoMetaValue>O&#x27;Reily</ResultItemInfoMetaValue>
-                                </ResultItemInfoMeta>
-                            </RenderIf>
-                            <RenderIf isTrue={hasLanguage}>
-                                <ResultItemInfoMeta>
-                                    Language:
-                                    <ResultItemInfoMetaValue>{language}</ResultItemInfoMetaValue>
-                                </ResultItemInfoMeta>
-                            </RenderIf>
-                        </ResultItemInfo>
-                    </ResultItemInfoWrapper>
-                    <ResultItemRatingWrapper>
-                        <ResultItemRatingLite>
-                            <ResultItemRating value={String(Math.round(Number(averageRating)))} />
-                            <ResultItemRatingLabel>{ratingCount} Ratings</ResultItemRatingLabel>
-                        </ResultItemRatingLite>
-                        <RenderIf isTrue={hasCategories}>
-                            <ResultItemCategoriesWrapper>
-                                <ResultItemCategoriesLabel>Categories</ResultItemCategoriesLabel>
-                                <ItemCategories categories={categories} />
-                            </ResultItemCategoriesWrapper>
-                        </RenderIf>
-                    </ResultItemRatingWrapper>
-                </ResultItemContent>
-            </ResultItemContainer>
-        </ResultItemWrapper>
+        <Wrapper className={className} style={style}>
+            <LinkWrapper href={bookUrl}>
+                <FlexWrapper>
+                    <div>
+                        <ItemInfo
+                            title={title}
+                            author={authors}
+                            publisher={publisher}
+                            language={language}
+                            cover={cover}
+                        />
+                    </div>
+                    <div>
+                        <RatingWrapper>
+                            <ItemRating
+                                averageRating={Math.round(Number(averageRating))}
+                                ratingCount={ratingCount}
+                            />
+                        </RatingWrapper>
+                        <CategoriesWrapper>
+                            <ItemCategories categories={categories} />
+                        </CategoriesWrapper>
+                    </div>
+                </FlexWrapper>
+            </LinkWrapper>
+        </Wrapper>
     );
 };
 
 export default SearchResultItem;
 
 SearchResultItem.propTypes = {
-    className: PropTypes.string,
-    style: PropTypes.object,
+    objectID: PropTypes.any,
     title: PropTypes.string,
     authors: PropTypes.string,
-    publishedBy: PropTypes.string,
+    publisher: PropTypes.string,
     ratingCount: PropTypes.number,
     averageRating: PropTypes.number,
     language: PropTypes.string,
     cover: PropTypes.string,
     categories: PropTypes.array,
+    className: PropTypes.string,
+    style: PropTypes.object,
 };
 SearchResultItem.defaultProps = {
-    className: undefined,
-    style: undefined,
+    objectID: null,
     title: '',
     authors: '',
-    publishedBy: '',
+    publisher: '',
     ratingCount: 0,
-    averageRating: 0,
+    averageRating: '0',
     language: '',
     cover: '',
-    categories: null,
+    categories: [],
+    className: undefined,
+    style: undefined,
 };

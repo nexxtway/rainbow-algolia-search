@@ -1,7 +1,7 @@
 import React from 'react';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { HeadingLabel } from '../../styled';
-import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } from './styled';
+import { Wrapper, PresentationWrapper, BookImg, IntroLabel, InputWrapper } from './styled';
 import { SearchIcon } from '../../components/icons';
 import SearchResultItem from '../../components/search-result-item';
 import ResultsAlgolia from '../../algolia-components/results';
@@ -19,12 +19,11 @@ import {
 const Home = () => {
     return (
         <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
-            <IntroWrapper>
-                <IntroPresentation>
+            <Wrapper>
+                <PresentationWrapper>
                     <BookImg />
                     <IntroLabel>Find Books</IntroLabel>
-                </IntroPresentation>
-                <div>
+
                     <Configure hitsPerPage={3} />
                     <DisplayIfNotQueryInput>
                         <HeadingLabel>
@@ -32,17 +31,23 @@ const Home = () => {
                         </HeadingLabel>
                     </DisplayIfNotQueryInput>
                     <InputWrapper iconPosition="right" icon={<SearchIcon />} />
+                    {/* <InputWrapper
+                        label={<HeadingLabel>Access 250,100 books</HeadingLabel>}
+                        iconPosition="right"
+                        icon={<SearchIcon />}
+                    /> */}
                     <RecentItem />
                     <DisplayIfQueryInput>
                         <SearchResultsDescription />
                     </DisplayIfQueryInput>
-                </div>
-                <DisplayIfQueryInput>
-                    <DisplayIfResults>
-                        <ResultsAlgolia component={SearchResultItem} />
-                    </DisplayIfResults>
-                </DisplayIfQueryInput>
-            </IntroWrapper>
+
+                    <DisplayIfQueryInput>
+                        <DisplayIfResults>
+                            <ResultsAlgolia component={SearchResultItem} />
+                        </DisplayIfResults>
+                    </DisplayIfQueryInput>
+                </PresentationWrapper>
+            </Wrapper>
         </InstantSearch>
     );
 };

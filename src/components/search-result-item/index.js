@@ -26,7 +26,7 @@ const SearchResultItem = props => {
         className,
         style,
         title,
-        author,
+        authors,
         publishedBy,
         ratingCount,
         averageRating,
@@ -35,10 +35,10 @@ const SearchResultItem = props => {
         categories,
     } = props;
 
-    const hasCategories = !!categories.length;
-    const hasAuthor = !!author.length;
-    const hasPublisher = !!publishedBy.length;
-    const hasLanguage = !!language.length;
+    const hasCategories = !!categories && !!categories.length;
+    const hasAuthors = !!authors && !!authors.length;
+    const hasPublisher = !!publishedBy && !!publishedBy.length;
+    const hasLanguage = !!language && !!language.length;
 
     return (
         <ResultItemWrapper className={className} style={style}>
@@ -48,11 +48,11 @@ const SearchResultItem = props => {
                         <ResultItemImg src={cover} />
                         <ResultItemInfo>
                             <ResultItemTitle>{title}</ResultItemTitle>
-                            <RenderIf isTrue={hasAuthor}>
+                            <RenderIf isTrue={hasAuthors}>
                                 <ResultItemInfoMeta>
                                     By:
                                     <ResultItemInfoMetaFeatured>
-                                        {author}
+                                        {authors}
                                     </ResultItemInfoMetaFeatured>
                                 </ResultItemInfoMeta>
                             </RenderIf>
@@ -72,7 +72,7 @@ const SearchResultItem = props => {
                     </ResultItemInfoWrapper>
                     <ResultItemRatingWrapper>
                         <ResultItemRatingLite>
-                            <ResultItemRating value={averageRating} />
+                            <ResultItemRating value={String(Math.round(Number(averageRating)))} />
                             <ResultItemRatingLabel>{ratingCount} Ratings</ResultItemRatingLabel>
                         </ResultItemRatingLite>
                         <RenderIf isTrue={hasCategories}>
@@ -94,10 +94,10 @@ SearchResultItem.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
     title: PropTypes.string,
-    author: PropTypes.string,
+    authors: PropTypes.string,
     publishedBy: PropTypes.string,
     ratingCount: PropTypes.number,
-    averageRating: PropTypes.string,
+    averageRating: PropTypes.number,
     language: PropTypes.string,
     cover: PropTypes.string,
     categories: PropTypes.array,
@@ -106,7 +106,7 @@ SearchResultItem.defaultProps = {
     className: undefined,
     style: undefined,
     title: '',
-    author: '',
+    authors: '',
     publishedBy: '',
     ratingCount: 0,
     averageRating: 0,

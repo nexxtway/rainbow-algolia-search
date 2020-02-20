@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 const ItemList = ({ component: Component, items }) => {
     return items.map((item, index) => {
         const key = `item_${index}`;
-        return <Component key={key} item={item} />;
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        return <Component {...item} key={key} />;
     });
 };
 

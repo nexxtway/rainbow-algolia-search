@@ -5,6 +5,7 @@ import { connectSearchBox } from 'react-instantsearch-dom';
 import { SearchIcon } from '../../components/icons';
 
 const SearchInputRainbowAlgoliaAdapter = props => {
+    // eslint-disable-next-line react/prop-types
     const { currentRefinement, refine, label, className, style } = props;
     return (
         <Input
@@ -25,15 +26,11 @@ const SearchInputRainbowAlgolia = connectSearchBox(SearchInputRainbowAlgoliaAdap
 export default SearchInputRainbowAlgolia;
 
 SearchInputRainbowAlgoliaAdapter.propTypes = {
-    currentRefinement: PropTypes.any,
-    refine: PropTypes.any,
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     className: PropTypes.string,
     style: PropTypes.object,
 };
 SearchInputRainbowAlgoliaAdapter.defaultProps = {
-    currentRefinement: null,
-    refine: null,
     label: null,
     className: undefined,
     style: undefined,

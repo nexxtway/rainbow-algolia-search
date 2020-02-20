@@ -11450,7 +11450,7 @@ react-dev-utils@^10.1.0:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^16.12.0, react-dom@^16.8.6:
+react-dom@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.12.0.tgz#0da4b714b8d13c2038c9396b54a92baea633fe11"
   integrity sha512-LMxFfAGrcS3kETtQaCkTKjMiifahaMySFDn71fZUNpPHZQEzmk/GiAeIT8JSOrHB23fnuCOMruL2a8NYlw+8Gw==
@@ -11491,18 +11491,16 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-rainbow-components@^1.12.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.12.0.tgz#6f734c9816f744fe38c44b413c1fa2634f36b8a3"
-  integrity sha512-L7t8hZiW0MrlpejZAwspnSpE1BoneY3ZJ0wTlrEAGF9IGNYlGmRGJAsdYx+llszFaRj0V0oCpMfU5noAxgN/Tw==
+react-rainbow-components@1.12.0-canary.1c7e078:
+  version "1.12.0-canary.1c7e078"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.12.0-canary.1c7e078.tgz#ef1ff3383659e97cb91500d6cf811214b7273cbf"
+  integrity sha512-RaW/giPF8lHB++tWbQR8q6xJ+7bZ6Vlrmtkcfc4G7rohbVt002M0g2qLd1wc2DXJjHFmEHgHSu7QAU/IBk58mg==
   dependencies:
     autosize "^4.0.2"
     chart.js "^2.7.3"
     clipboard-copy "^2.0.0"
     prop-types "^15.6.2"
-    react "^16.8.6"
     react-async-script-loader "^0.3.0"
-    react-dom "^16.8.6"
     styled-components "^4.3.2"
     xlsx "^0.14.4"
 
@@ -11595,7 +11593,7 @@ react-scripts@3.3.1:
   optionalDependencies:
     fsevents "2.1.2"
 
-react@^16.12.0, react@^16.8.6:
+react@^16.12.0:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
   integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==

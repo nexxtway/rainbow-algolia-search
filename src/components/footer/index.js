@@ -1,15 +1,13 @@
 import React from 'react';
-import { FooterWrapper, FooterContainer, FooterCopyright } from './styled';
+import { Wrapper, Copyright } from './styled';
 
 const year = new Date().getFullYear();
 
 const Footer = () => {
     return (
-        <FooterWrapper>
-            <FooterContainer>
-                <FooterCopyright>© Copyright Nexxtway {year}</FooterCopyright>
-            </FooterContainer>
-        </FooterWrapper>
+        <Wrapper>
+            <Copyright>© Copyright Nexxtway {year}</Copyright>
+        </Wrapper>
     );
 };
 

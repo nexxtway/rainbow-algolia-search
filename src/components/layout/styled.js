@@ -3,19 +3,11 @@ import styled from 'styled-components';
 export const MainWrapper = styled.main`
     position: relative;
     width: 100%;
-    height: 100vh;
     padding-bottom: 43px;
     background-color: #f4f6f9;
     font-family: Lato, sans-serif;
     color: #a4a7b5;
-    font-size: 24px;
-    line-height: 1.4em;
     font-weight: 400;
-
-    a {
-        color: #44d7b6;
-        text-decoration: underline;
-    }
 `;
 
 export const Container = styled.main`

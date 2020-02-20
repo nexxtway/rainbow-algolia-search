@@ -1,18 +1,17 @@
 import React from 'react';
-import { ResultsDescription, ResultsTotalsDescription } from './styled';
+import { FlexWrapper, DescriptionWrapper } from './styled';
 import SearchResultsTotals from '../search-results-totals';
 import Pagination from '../pagination';
-
-const search = 'You Dont Know JS';
+import CurrentSearchState from '../../algolia-components/current-search-state';
 
 const SearchResultsDescription = () => {
     return (
-        <ResultsDescription>
-            <ResultsTotalsDescription>
-                <SearchResultsTotals found={86} search={search} />
-            </ResultsTotalsDescription>
+        <FlexWrapper>
+            <DescriptionWrapper>
+                <CurrentSearchState component={SearchResultsTotals} />
+            </DescriptionWrapper>
             <Pagination pages={5} defaultActivePage={3} />
-        </ResultsDescription>
+        </FlexWrapper>
     );
 };
 

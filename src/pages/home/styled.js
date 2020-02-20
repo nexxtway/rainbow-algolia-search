@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Input } from 'react-rainbow-components';
+import InputSearch from '../../algolia-components/search-input';
 import { BookIcon } from '../../components/icons';
 
-export const IntroWrapper = styled.div`
+export const Wrapper = styled.div`
     overflow: hidden;
     margin-bottom: 32px;
     transition: all 350ms ease;
@@ -14,7 +14,7 @@ export const IntroWrapper = styled.div`
     }
 `;
 
-export const IntroPresentation = styled.div`
+export const PresentationWrapper = styled.div`
     margin-bottom: 36px;
     padding-top: 59px;
     transition: all 200ms ease;
@@ -84,7 +84,7 @@ export const RecentItem = styled.a`
     }
 `;
 
-export const InputWrapper = styled(Input)`
+export const InputWrapper = styled(InputSearch)`
     margin: 0 auto 16px auto;
     max-width: 860px;
 `;

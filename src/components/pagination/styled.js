@@ -1,7 +1,7 @@
-import { Pagination } from 'react-rainbow-components';
 import styled from 'styled-components';
+import Pagination from '../../algolia-components/pagination';
 
-export const PaginationWrapper = styled(Pagination)`
+export const PaginationItem = styled(Pagination)`
     padding-top: 20px;
     display: flex;
     margin-bottom: 25px;

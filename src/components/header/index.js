@@ -1,7 +1,6 @@
 import React from 'react';
 import {
-    HeaderWrapper,
-    HeaderContainer,
+    Wrapper,
     LogoWrapper,
     Logo,
     TopActions,
@@ -11,24 +10,24 @@ import {
     GitImg,
 } from './styled';
 
+const gitUrl = 'https://github.com/nexxtway/rainbow-algolia-search/';
+
 const Header = () => {
     return (
-        <HeaderWrapper>
-            <HeaderContainer>
-                <LogoWrapper>
-                    <Logo src="assets/logo.svg" />
-                </LogoWrapper>
-                <TopActions>
-                    <TopAction href="#">
-                        <MoonImg />
-                        <SunImg />
-                    </TopAction>
-                    <TopAction href="#">
-                        <GitImg />
-                    </TopAction>
-                </TopActions>
-            </HeaderContainer>
-        </HeaderWrapper>
+        <Wrapper>
+            <LogoWrapper>
+                <Logo src="assets/logo.svg" />
+            </LogoWrapper>
+            <TopActions>
+                <TopAction href="#">
+                    <MoonImg />
+                    <SunImg />
+                </TopAction>
+                <TopAction href={gitUrl} target="_blank">
+                    <GitImg />
+                </TopAction>
+            </TopActions>
+        </Wrapper>
     );
 };
 

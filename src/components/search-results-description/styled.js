@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const ResultsDescription = styled.div`
+export const FlexWrapper = styled.div`
     display: flex;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
     justify-content: space-between;
     align-items: center;
     transition: all 200ms ease;
@@ -12,7 +12,7 @@ export const ResultsDescription = styled.div`
     }
 `;
 
-export const ResultsTotalsDescription = styled.div`
+export const DescriptionWrapper = styled.div`
     @media screen and (max-width: 991px) {
         flex-direction: column;
     }

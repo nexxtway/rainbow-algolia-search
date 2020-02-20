@@ -1,10 +1,82 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import ItemCategories from '../item-categories';
+import ItemRating from '../item-rating';
+import ItemInfo from '../item-info';
+import { Wrapper, LinkWrapper, FlexWrapper, RatingWrapper, CategoriesWrapper } from './styled';
 
-const Styled = styled.div``;
+const SearchResultItem = props => {
+    const {
+        objectID,
+        title,
+        authors,
+        publisher,
+        ratingCount,
+        averageRating,
+        language,
+        cover,
+        categories,
+        className,
+        style,
+    } = props;
 
-const SearchResultItem = () => {
-    return <Styled>SearchResultItem</Styled>;
+    const bookUrl = `/book/${objectID}`;
+
+    return (
+        <Wrapper className={className} style={style}>
+            <LinkWrapper href={bookUrl}>
+                <FlexWrapper>
+                    <div>
+                        <ItemInfo
+                            title={title}
+                            author={authors}
+                            publisher={publisher}
+                            language={language}
+                            cover={cover}
+                        />
+                    </div>
+                    <div>
+                        <RatingWrapper>
+                            <ItemRating
+                                averageRating={Math.round(Number(averageRating))}
+                                ratingCount={ratingCount}
+                            />
+                        </RatingWrapper>
+                        <CategoriesWrapper>
+                            <ItemCategories categories={categories} />
+                        </CategoriesWrapper>
+                    </div>
+                </FlexWrapper>
+            </LinkWrapper>
+        </Wrapper>
+    );
 };
 
 export default SearchResultItem;
+
+SearchResultItem.propTypes = {
+    objectID: PropTypes.any,
+    title: PropTypes.string,
+    authors: PropTypes.string,
+    publisher: PropTypes.string,
+    ratingCount: PropTypes.number,
+    averageRating: PropTypes.number,
+    language: PropTypes.string,
+    cover: PropTypes.string,
+    categories: PropTypes.array,
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+SearchResultItem.defaultProps = {
+    objectID: null,
+    title: '',
+    authors: '',
+    publisher: '',
+    ratingCount: 0,
+    averageRating: '0',
+    language: '',
+    cover: '',
+    categories: [],
+    className: undefined,
+    style: undefined,
+};

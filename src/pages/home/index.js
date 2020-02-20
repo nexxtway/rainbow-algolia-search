@@ -8,7 +8,7 @@ import SearchResultItems from '../../components/search-result-items';
 import SearchResultsDescription from '../../components/search-results-description';
 import searchClient from '../../algoliaClient';
 
-const items = [
+const itemsDemo = [
     {
         id: 456,
         title: 'Title',
@@ -33,6 +33,9 @@ const items = [
     },
 ];
 
+const recentItemIdDemo = 47832;
+const recentItemTitleDemo = 'Lorem Ipsum Title';
+
 const Home = () => {
     return (
         <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
@@ -50,11 +53,11 @@ const Home = () => {
                     icon={<SearchIcon />}
                 />
 
-                <RecentItem />
+                <RecentItem id={recentItemIdDemo} title={recentItemTitleDemo} />
 
                 <SearchResultsDescription />
 
-                <SearchResultItems items={items} />
+                <SearchResultItems items={itemsDemo} />
             </Wrapper>
         </InstantSearch>
     );

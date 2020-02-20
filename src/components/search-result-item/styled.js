@@ -28,6 +28,7 @@ export const LinkWrapper = styled.div`
 `;
 
 export const FlexWrapper = styled.div`
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;

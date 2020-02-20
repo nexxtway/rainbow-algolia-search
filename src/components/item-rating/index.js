@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ResultItemRating, ResultItemRatingLabel } from './styled';
+import { Rating, Label } from './styled';
 
 const ItemRating = props => {
     const { ratingCount, averageRating, className, style } = props;
 
     return (
         <div className={className} style={style}>
-            <ResultItemRating value={averageRating} />
-            <ResultItemRatingLabel>{ratingCount} Ratings</ResultItemRatingLabel>
+            <Rating value={averageRating} />
+            <Label>{ratingCount} Ratings</Label>
         </div>
     );
 };

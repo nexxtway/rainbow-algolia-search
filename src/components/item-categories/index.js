@@ -1,14 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Badge } from 'react-rainbow-components';
-import { ResultItemCategoriesWrapper } from './styled';
-
-const styles = {
-    label: {
-        fontSize: '14px',
-        marginBottom: '6px',
-    },
-};
+import { Wrapper, Label } from './styled';
 
 const ItemCategories = props => {
     const { className, style, categories } = props;
@@ -17,15 +10,15 @@ const ItemCategories = props => {
 
     if (hasCategories) {
         return (
-            <ResultItemCategoriesWrapper className={className} style={style}>
-                <p style={styles.label}>Categories</p>
+            <Wrapper className={className} style={style}>
+                <Label>Categories</Label>
 
                 {categories.map((category, index) => {
                     const key = `${category}-${index}`;
 
                     return <Badge label={category} key={key} />;
                 })}
-            </ResultItemCategoriesWrapper>
+            </Wrapper>
         );
     }
     return null;

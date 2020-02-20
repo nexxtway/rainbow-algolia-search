@@ -1,21 +1,15 @@
 import styled from 'styled-components';
 import { MoonIcon, SunIcon, GitIcon } from '../icons';
 
-export const HeaderWrapper = styled.div`
+export const Wrapper = styled.div`
     display: flex;
-    margin-bottom: 43px;
-    padding-top: 24px;
+    margin: 0 auto 43px auto;
     justify-content: center;
     align-items: center;
     text-align: center;
-`;
-
-export const HeaderContainer = styled.div`
-    display: flex;
     width: 100%;
     max-width: 1393px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding: 43px 20px 0 20px;
     justify-content: space-between;
 `;
 

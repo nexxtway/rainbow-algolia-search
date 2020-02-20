@@ -5,12 +5,14 @@ import { Badge } from 'react-rainbow-components';
 const ItemCategories = props => {
     const { className, style, categories } = props;
 
-    if (categories) {
+    if (categories.length) {
         return (
             <div className={className} style={style}>
-                {categories.map(category => (
-                    <Badge label={category} key={category} />
-                ))}
+                {categories.map((category, index) => {
+                    const key = `${category}-${index}`;
+
+                    return <Badge label={category} key={key} />;
+                })}
             </div>
         );
     }
@@ -27,5 +29,5 @@ ItemCategories.propTypes = {
 ItemCategories.defaultProps = {
     className: undefined,
     style: undefined,
-    categories: null,
+    categories: [],
 };

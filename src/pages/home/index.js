@@ -41,8 +41,12 @@ const Home = () => {
                 </IntroPresentation>
                 <div>
                     <Configure hitsPerPage={8} />
-                    <HeadingLabel>Access 250,100 books</HeadingLabel>
-                    <InputWrapper iconPosition="right" icon={<SearchIcon />} />
+
+                    <InputWrapper
+                        label={<HeadingLabel>Access 250,100 books</HeadingLabel>}
+                        iconPosition="right"
+                        icon={<SearchIcon />}
+                    />
                     <RecentItem />
                     <SearchResultsDescription />
                 </div>

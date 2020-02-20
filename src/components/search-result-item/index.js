@@ -14,9 +14,7 @@ import {
     ResultItemInfoMeta,
     ResultItemInfoMetaFeatured,
     ResultItemInfoMetaValue,
-    ResultItemRatingWrapper,
-    ResultItemCategoriesWrapper,
-    ResultItemCategoriesLabel,
+    ItemCategoriesWrapper,
 } from './styled';
 
 const styles = {
@@ -40,7 +38,6 @@ const SearchResultItem = props => {
         style,
     } = props;
 
-    const hasCategories = !!categories.length;
     const hasAuthor = !!author.length;
     const hasPublisher = !!publishedBy.length;
     const hasLanguage = !!language.length;
@@ -77,19 +74,16 @@ const SearchResultItem = props => {
                             </RenderIf>
                         </ResultItemInfo>
                     </ResultItemInfoWrapper>
-                    <ResultItemRatingWrapper>
+                    <div>
                         <ItemRating
                             averageRating={averageRating}
                             ratingCount={ratingCount}
                             style={styles.itemRating}
                         />
-                        <RenderIf isTrue={hasCategories}>
-                            <ResultItemCategoriesWrapper>
-                                <ResultItemCategoriesLabel>Categories</ResultItemCategoriesLabel>
-                                <ItemCategories categories={categories} />
-                            </ResultItemCategoriesWrapper>
-                        </RenderIf>
-                    </ResultItemRatingWrapper>
+                        <ItemCategoriesWrapper>
+                            <ItemCategories categories={categories} />
+                        </ItemCategoriesWrapper>
+                    </div>
                 </ResultItemContent>
             </ResultItemContainer>
         </ResultItemWrapper>

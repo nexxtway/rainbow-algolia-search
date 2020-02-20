@@ -94,29 +94,10 @@ export const ResultItemInfoMetaValue = styled.div`
     display: inline;
 `;
 
-export const ResultItemRatingWrapper = styled.div`
+export const ItemCategoriesWrapper = styled.div`
     text-align: right;
 
     @media screen and (max-width: 767px) {
         text-align: left;
     }
-`;
-
-export const ResultItemCategoriesWrapper = styled.div`
-    position: absolute;
-    left: auto;
-    top: auto;
-    right: 20px;
-    bottom: 20px;
-
-    @media screen and (max-width: 767px) {
-        position: relative;
-        right: auto;
-        bottom: auto;
-    }
-`;
-
-export const ResultItemCategoriesLabel = styled.div`
-    font-size: 14px;
-    line-height: 1em;
 `;

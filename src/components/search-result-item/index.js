@@ -1,29 +1,16 @@
 import React from 'react';
-import RenderIf from 'react-rainbow-components/components/RenderIf';
 import PropTypes from 'prop-types';
 import ItemCategories from '../item-categories';
 import ItemRating from '../item-rating';
-import {
-    ResultItemWrapper,
-    ResultItemContainer,
-    ResultItemContent,
-    ResultItemInfoWrapper,
-    ResultItemImg,
-    ResultItemInfo,
-    ResultItemTitle,
-    ResultItemInfoMeta,
-    ResultItemInfoMetaFeatured,
-    ResultItemInfoMetaValue,
-    ItemRatingWrapper,
-    ItemCategoriesWrapper,
-} from './styled';
+import ItemInfo from '../item-info';
+import { Wrapper, LinkWrapper, FlexWrapper, RatingWrapper, CategoriesWrapper } from './styled';
 
 const SearchResultItem = props => {
     const {
         id,
         title,
         author,
-        publishedBy,
+        publisher,
         ratingCount,
         averageRating,
         language,
@@ -33,53 +20,32 @@ const SearchResultItem = props => {
         style,
     } = props;
 
-    const hasAuthor = !!author.length;
-    const hasPublisher = !!publishedBy.length;
-    const hasLanguage = !!language.length;
-
     const bookUrl = `/book/${id}`;
 
     return (
-        <ResultItemWrapper className={className} style={style}>
-            <ResultItemContainer href={bookUrl}>
-                <ResultItemContent>
-                    <ResultItemInfoWrapper>
-                        <ResultItemImg src={cover} />
-                        <ResultItemInfo>
-                            <ResultItemTitle>{title}</ResultItemTitle>
-                            <RenderIf isTrue={hasAuthor}>
-                                <ResultItemInfoMeta>
-                                    By:
-                                    <ResultItemInfoMetaFeatured>
-                                        {author}
-                                    </ResultItemInfoMetaFeatured>
-                                </ResultItemInfoMeta>
-                            </RenderIf>
-                            <RenderIf isTrue={hasPublisher}>
-                                <ResultItemInfoMeta>
-                                    Published by:
-                                    <ResultItemInfoMetaValue>O&#x27;Reily</ResultItemInfoMetaValue>
-                                </ResultItemInfoMeta>
-                            </RenderIf>
-                            <RenderIf isTrue={hasLanguage}>
-                                <ResultItemInfoMeta>
-                                    Language:
-                                    <ResultItemInfoMetaValue>{language}</ResultItemInfoMetaValue>
-                                </ResultItemInfoMeta>
-                            </RenderIf>
-                        </ResultItemInfo>
-                    </ResultItemInfoWrapper>
+        <Wrapper className={className} style={style}>
+            <LinkWrapper href={bookUrl}>
+                <FlexWrapper>
                     <div>
-                        <ItemRatingWrapper>
-                            <ItemRating averageRating={averageRating} ratingCount={ratingCount} />
-                        </ItemRatingWrapper>
-                        <ItemCategoriesWrapper>
-                            <ItemCategories categories={categories} />
-                        </ItemCategoriesWrapper>
+                        <ItemInfo
+                            title={title}
+                            author={author}
+                            publisher={publisher}
+                            language={language}
+                            cover={cover}
+                        />
                     </div>
-                </ResultItemContent>
-            </ResultItemContainer>
-        </ResultItemWrapper>
+                    <div>
+                        <RatingWrapper>
+                            <ItemRating averageRating={averageRating} ratingCount={ratingCount} />
+                        </RatingWrapper>
+                        <CategoriesWrapper>
+                            <ItemCategories categories={categories} />
+                        </CategoriesWrapper>
+                    </div>
+                </FlexWrapper>
+            </LinkWrapper>
+        </Wrapper>
     );
 };
 
@@ -89,7 +55,7 @@ SearchResultItem.propTypes = {
     id: PropTypes.any,
     title: PropTypes.string,
     author: PropTypes.string,
-    publishedBy: PropTypes.string,
+    publisher: PropTypes.string,
     ratingCount: PropTypes.number,
     averageRating: PropTypes.string,
     language: PropTypes.string,
@@ -102,7 +68,7 @@ SearchResultItem.defaultProps = {
     id: null,
     title: '',
     author: '',
-    publishedBy: '',
+    publisher: '',
     ratingCount: 0,
     averageRating: '0',
     language: '',

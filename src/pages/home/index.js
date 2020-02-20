@@ -1,7 +1,7 @@
 import React from 'react';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { HeadingLabel } from '../../styled';
-import { IntroWrapper, IntroPresentation, BookImg, IntroLabel, InputWrapper } from './styled';
+import { Wrapper, PresentationWrapper, BookImg, IntroLabel, InputWrapper } from './styled';
 import { SearchIcon } from '../../components/icons';
 import RecentItem from '../../components/recent-item';
 import SearchResultItems from '../../components/search-result-items';
@@ -36,25 +36,26 @@ const items = [
 const Home = () => {
     return (
         <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
-            <IntroWrapper>
-                <IntroPresentation>
+            <Wrapper>
+                <PresentationWrapper>
                     <BookImg />
                     <IntroLabel>Find Books</IntroLabel>
-                </IntroPresentation>
-                <div>
-                    <Configure hitsPerPage={8} />
+                </PresentationWrapper>
 
-                    <InputWrapper
-                        label={<HeadingLabel>Access 250,100 books</HeadingLabel>}
-                        iconPosition="right"
-                        icon={<SearchIcon />}
-                    />
-                    <RecentItem />
-                    <SearchResultsDescription />
-                </div>
+                <Configure hitsPerPage={8} />
+
+                <InputWrapper
+                    label={<HeadingLabel>Access 250,100 books</HeadingLabel>}
+                    iconPosition="right"
+                    icon={<SearchIcon />}
+                />
+
+                <RecentItem />
+
+                <SearchResultsDescription />
 
                 <SearchResultItems items={items} />
-            </IntroWrapper>
+            </Wrapper>
         </InstantSearch>
     );
 };

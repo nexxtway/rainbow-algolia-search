@@ -1,18 +1,6 @@
 import styled from 'styled-components';
-import { Rating } from 'react-rainbow-components';
 
-export const ResultItemRating = styled(Rating)`
-    height: auto;
-    display: block;
-    margin-bottom: 6px;
-`;
-
-export const ResultItemRatingLabel = styled.div`
-    font-size: 14px;
-    line-height: 1em;
-`;
-
-export const ResultItemCategoriesWrapper = styled.div`
+export const Wrapper = styled.div`
     position: absolute;
     left: auto;
     top: auto;
@@ -24,4 +12,10 @@ export const ResultItemCategoriesWrapper = styled.div`
         right: auto;
         bottom: auto;
     }
+`;
+
+export const Label = styled.p`
+    font-size: 14px;
+    line-height: 1em;
+    margin-bottom: 7px;
 `;

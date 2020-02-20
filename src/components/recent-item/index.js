@@ -1,17 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HeadingLabel } from '../../styled';
-import { RecentItemLink } from './styled';
+import { Wrapper, Link } from './styled';
 
 const RecentItem = props => {
-    const { recentItem } = props;
+    const { id, title, className, style } = props;
 
-    if (recentItem) {
+    const hasValues = !!(id && title);
+
+    const itemUrl = hasValues ? `/book/${id}` : '';
+
+    if (hasValues) {
         return (
-            <HeadingLabel>
-                Recent Book:
-                <RecentItemLink href="#">{recentItem}</RecentItemLink>
-            </HeadingLabel>
+            <Wrapper className={className} style={style}>
+                <HeadingLabel>
+                    Recent Book:
+                    <Link href={itemUrl}>{title}</Link>
+                </HeadingLabel>
+            </Wrapper>
         );
     }
     return null;
@@ -20,9 +26,15 @@ const RecentItem = props => {
 export default RecentItem;
 
 RecentItem.propTypes = {
-    recentItem: PropTypes.string,
+    id: PropTypes.number,
+    title: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 RecentItem.defaultProps = {
-    recentItem: '',
+    id: null,
+    title: '',
+    className: undefined,
+    style: undefined,
 };

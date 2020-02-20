@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterWrapper = styled.div`
+export const Wrapper = styled.div`
     position: absolute;
     left: 0%;
     top: auto;
@@ -9,10 +9,6 @@ export const FooterWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-`;
-
-export const FooterContainer = styled.div`
-    display: flex;
     width: 100%;
     max-width: 1393px;
     padding-right: 20px;
@@ -20,9 +16,10 @@ export const FooterContainer = styled.div`
     justify-content: space-between;
 `;
 
-export const FooterCopyright = styled.div`
+export const Copyright = styled.div`
     width: 100%;
     color: #576574;
     font-size: 16px;
     text-align: center;
+    padding-bottom: 5px;
 `;

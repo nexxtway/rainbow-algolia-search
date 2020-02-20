@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { Rating } from 'react-rainbow-components';
+import { Rating as RainbowRating } from 'react-rainbow-components';
 
-export const ResultItemRating = styled(Rating)`
+export const Rating = styled(RainbowRating)`
     height: auto;
     display: block;
     margin-bottom: 6px;
 `;
 
-export const ResultItemRatingLabel = styled.div`
+export const Label = styled.div`
     font-size: 14px;
     line-height: 1em;
 `;

@@ -26,10 +26,12 @@ const SearchResultItem = props => {
         cover,
         categories,
         publishedBy,
+        className,
+        style,
     } = props;
 
     return (
-        <Container>
+        <Container className={className} style={style}>
             <LeftContent>
                 <Cover src={cover} />
                 <Info>
@@ -73,6 +75,8 @@ SearchResultItem.propTypes = {
     language: PropTypes.string,
     cover: PropTypes.string,
     categories: PropTypes.string,
+    className: PropTypes.string,
+    style: PropTypes.object,
 };
 
 SearchResultItem.defaultProps = {
@@ -84,4 +88,6 @@ SearchResultItem.defaultProps = {
     language: '',
     cover: '',
     categories: '',
+    className: undefined,
+    style: undefined,
 };

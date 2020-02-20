@@ -7,9 +7,17 @@ export const ResultItemWrapper = styled(Card)`
     align-items: stretch;
 `;
 
-export const ResultItemContainer = styled.div`
+export const ResultItemContainer = styled.a`
+    display: block;
     width: 100%;
     padding: 20px;
+    text-decoration: none;
+    color: #a4a7b5;
+
+    :hover {
+        text-decoration: none;
+        color: #a4a7b5;
+    }
 `;
 
 export const ResultItemContent = styled.div`

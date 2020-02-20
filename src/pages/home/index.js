@@ -10,6 +10,7 @@ import searchClient from '../../algoliaClient';
 
 const items = [
     {
+        id: 456,
         title: 'Title',
         author: 'Author',
         ratingCount: 42,
@@ -20,6 +21,7 @@ const items = [
         categories: ['Adventures', 'Documental'],
     },
     {
+        id: 58741,
         title: 'Title',
         author: 'Author',
         ratingCount: 42,

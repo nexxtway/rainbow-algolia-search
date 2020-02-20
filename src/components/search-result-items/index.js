@@ -12,6 +12,7 @@ const SearchResults = props => {
             <div className={className} style={style}>
                 {items.map(item => (
                     <SearchResultItem
+                        id={item.id}
                         title={item.title}
                         author={item.author}
                         ratingCount={item.ratingCount}
@@ -38,5 +39,5 @@ SearchResults.propTypes = {
 SearchResults.defaultProps = {
     className: undefined,
     style: undefined,
-    items: null,
+    items: [],
 };

@@ -23,8 +23,7 @@ import {
 
 const SearchResultItem = props => {
     const {
-        className,
-        style,
+        id,
         title,
         author,
         publishedBy,
@@ -33,6 +32,8 @@ const SearchResultItem = props => {
         language,
         cover,
         categories,
+        className,
+        style,
     } = props;
 
     const hasCategories = !!categories.length;
@@ -40,9 +41,11 @@ const SearchResultItem = props => {
     const hasPublisher = !!publishedBy.length;
     const hasLanguage = !!language.length;
 
+    const bookUrl = `/book/${id}`;
+
     return (
         <ResultItemWrapper className={className} style={style}>
-            <ResultItemContainer>
+            <ResultItemContainer href={bookUrl}>
                 <ResultItemContent>
                     <ResultItemInfoWrapper>
                         <ResultItemImg src={cover} />
@@ -91,8 +94,7 @@ const SearchResultItem = props => {
 export default SearchResultItem;
 
 SearchResultItem.propTypes = {
-    className: PropTypes.string,
-    style: PropTypes.object,
+    id: PropTypes.any,
     title: PropTypes.string,
     author: PropTypes.string,
     publishedBy: PropTypes.string,
@@ -101,10 +103,11 @@ SearchResultItem.propTypes = {
     language: PropTypes.string,
     cover: PropTypes.string,
     categories: PropTypes.array,
+    className: PropTypes.string,
+    style: PropTypes.object,
 };
 SearchResultItem.defaultProps = {
-    className: undefined,
-    style: undefined,
+    id: null,
     title: '',
     author: '',
     publishedBy: '',
@@ -112,5 +115,7 @@ SearchResultItem.defaultProps = {
     averageRating: 0,
     language: '',
     cover: '',
-    categories: null,
+    categories: [],
+    className: undefined,
+    style: undefined,
 };

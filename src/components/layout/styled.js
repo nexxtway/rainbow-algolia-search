@@ -10,11 +10,6 @@ export const MainWrapper = styled.main`
     font-size: 24px;
     line-height: 1.4em;
     font-weight: 400;
-
-    a {
-        color: #44d7b6;
-        text-decoration: underline;
-    }
 `;
 
 export const Container = styled.main`

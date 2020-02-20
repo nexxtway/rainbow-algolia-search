@@ -5,7 +5,9 @@ import { Badge } from 'react-rainbow-components';
 const ItemCategories = props => {
     const { className, style, categories } = props;
 
-    if (categories.length) {
+    const hasCategories = !!categories.length;
+
+    if (hasCategories) {
         return (
             <div className={className} style={style}>
                 {categories.map((category, index) => {

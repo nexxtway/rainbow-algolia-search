@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Rating, Card } from 'react-rainbow-components';
+import { Card } from 'react-rainbow-components';
 
 export const ResultItemWrapper = styled(Card)`
     position: relative;
@@ -100,23 +100,6 @@ export const ResultItemRatingWrapper = styled.div`
     @media screen and (max-width: 767px) {
         text-align: left;
     }
-`;
-
-export const ResultItemRatingLite = styled.div`
-    @media screen and (max-width: 767px) {
-        margin-bottom: 17px;
-    }
-`;
-
-export const ResultItemRating = styled(Rating)`
-    height: auto;
-    display: block;
-    margin-bottom: 6px;
-`;
-
-export const ResultItemRatingLabel = styled.div`
-    font-size: 14px;
-    line-height: 1em;
 `;
 
 export const ResultItemCategoriesWrapper = styled.div`

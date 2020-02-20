@@ -2,6 +2,7 @@ import React from 'react';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import PropTypes from 'prop-types';
 import ItemCategories from '../item-categories';
+import ItemRating from '../item-rating';
 import {
     ResultItemWrapper,
     ResultItemContainer,
@@ -14,12 +15,15 @@ import {
     ResultItemInfoMetaFeatured,
     ResultItemInfoMetaValue,
     ResultItemRatingWrapper,
-    ResultItemRatingLite,
-    ResultItemRating,
-    ResultItemRatingLabel,
     ResultItemCategoriesWrapper,
     ResultItemCategoriesLabel,
 } from './styled';
+
+const styles = {
+    itemRating: {
+        textAlign: 'right',
+    },
+};
 
 const SearchResultItem = props => {
     const {
@@ -74,10 +78,11 @@ const SearchResultItem = props => {
                         </ResultItemInfo>
                     </ResultItemInfoWrapper>
                     <ResultItemRatingWrapper>
-                        <ResultItemRatingLite>
-                            <ResultItemRating value={averageRating} />
-                            <ResultItemRatingLabel>{ratingCount} Ratings</ResultItemRatingLabel>
-                        </ResultItemRatingLite>
+                        <ItemRating
+                            averageRating={averageRating}
+                            ratingCount={ratingCount}
+                            style={styles.itemRating}
+                        />
                         <RenderIf isTrue={hasCategories}>
                             <ResultItemCategoriesWrapper>
                                 <ResultItemCategoriesLabel>Categories</ResultItemCategoriesLabel>
@@ -112,7 +117,7 @@ SearchResultItem.defaultProps = {
     author: '',
     publishedBy: '',
     ratingCount: 0,
-    averageRating: 0,
+    averageRating: '0',
     language: '',
     cover: '',
     categories: [],

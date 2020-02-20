@@ -14,14 +14,9 @@ import {
     ResultItemInfoMeta,
     ResultItemInfoMetaFeatured,
     ResultItemInfoMetaValue,
+    ItemRatingWrapper,
     ItemCategoriesWrapper,
 } from './styled';
-
-const styles = {
-    itemRating: {
-        textAlign: 'right',
-    },
-};
 
 const SearchResultItem = props => {
     const {
@@ -75,11 +70,9 @@ const SearchResultItem = props => {
                         </ResultItemInfo>
                     </ResultItemInfoWrapper>
                     <div>
-                        <ItemRating
-                            averageRating={averageRating}
-                            ratingCount={ratingCount}
-                            style={styles.itemRating}
-                        />
+                        <ItemRatingWrapper>
+                            <ItemRating averageRating={averageRating} ratingCount={ratingCount} />
+                        </ItemRatingWrapper>
                         <ItemCategoriesWrapper>
                             <ItemCategories categories={categories} />
                         </ItemCategoriesWrapper>

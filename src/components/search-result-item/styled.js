@@ -94,6 +94,15 @@ export const ResultItemInfoMetaValue = styled.div`
     display: inline;
 `;
 
+export const ItemRatingWrapper = styled.div`
+    text-align: right;
+    margin-bottom: 17px;
+
+    @media screen and (max-width: 767px) {
+        text-align: left;
+    }
+`;
+
 export const ItemCategoriesWrapper = styled.div`
     text-align: right;
 

@@ -25,8 +25,3 @@ export const ResultItemCategoriesWrapper = styled.div`
         bottom: auto;
     }
 `;
-
-export const ResultItemCategoriesLabel = styled.div`
-    font-size: 14px;
-    line-height: 1em;
-`;

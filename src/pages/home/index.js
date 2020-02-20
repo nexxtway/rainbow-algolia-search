@@ -25,17 +25,18 @@ const Home = () => {
                     <IntroLabel>Find Books</IntroLabel>
 
                     <Configure hitsPerPage={3} />
-                    <DisplayIfNotQueryInput>
-                        <HeadingLabel>
-                            Access <ResultCount /> books
-                        </HeadingLabel>
-                    </DisplayIfNotQueryInput>
-                    <InputWrapper iconPosition="right" icon={<SearchIcon />} />
-                    {/* <InputWrapper
-                        label={<HeadingLabel>Access 250,100 books</HeadingLabel>}
+
+                    <InputWrapper
+                        label={
+                            <DisplayIfNotQueryInput>
+                                <HeadingLabel>
+                                    Access <ResultCount /> books
+                                </HeadingLabel>
+                            </DisplayIfNotQueryInput>
+                        }
                         iconPosition="right"
                         icon={<SearchIcon />}
-                    /> */}
+                    />
                     <RecentItem />
                     <DisplayIfQueryInput>
                         <SearchResultsDescription />

@@ -10,7 +10,7 @@ import {
     GitImg,
 } from './styled';
 
-const gitUrl = 'https://github.com/nexxtway/rainbow-algolia-search/pull/23';
+const gitUrl = 'https://github.com/nexxtway/rainbow-algolia-search/';
 
 const Header = () => {
     return (

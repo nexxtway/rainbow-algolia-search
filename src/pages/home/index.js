@@ -16,9 +16,6 @@ import {
     DisplayIfResults,
 } from '../../algolia-components/conditional-display';
 
-const recentItemIdDemo = 47832;
-const recentItemTitleDemo = 'Lorem Ipsum Title';
-
 const Home = () => {
     return (
         <InstantSearch indexName="rainbow-books" searchClient={searchClient}>

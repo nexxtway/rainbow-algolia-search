@@ -17,10 +17,17 @@ export const Wrapper = styled(Card)`
     }
 `;
 
-export const LinkWrapper = styled.div`
+export const LinkWrapper = styled.a`
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    text-decoration: none;
+    color: #a4a7b5;
+
+    :hover {
+        text-decoration: none;
+        color: inherit;
+    }
 
     @media screen and (max-width: 767px) {
         flex-direction: column;

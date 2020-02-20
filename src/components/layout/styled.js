@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const MainWrapper = styled.main`
     position: relative;
     width: 100%;
-    height: 100vh;
     padding-bottom: 43px;
     background-color: #f4f6f9;
     font-family: Lato, sans-serif;

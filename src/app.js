@@ -8,41 +8,38 @@ import Layout from './components/layout';
 
 const firebaseProviderSettings = { app: firebaseApp };
 
-const cyanDarkTheme = {
-    rainbow: {
-        palette: {
-            brand: '#44D7B6',
-            mainBackground: '#212121',
+const themes = {
+    light: {
+        rainbow: {
+            palette: {
+                brand: '#44D7B6',
+            },
         },
     },
-};
-
-const lightTheme = {
-    rainbow: {
-        palette: {
-            brand: '#44D7B6',
-            mainBackground: '#f4f6f9',
+    dark: {
+        rainbow: {
+            palette: {
+                brand: '#44D7B6',
+                mainBackground: '#212121',
+            },
         },
     },
 };
 
 function App() {
     const [theme, setTheme] = useState('light');
-    const [themeData, setThemeData] = useState(lightTheme);
 
     const toggleTheme = () => {
         if (theme === 'light') {
-            setThemeData(cyanDarkTheme);
             setTheme('dark');
         } else {
-            setThemeData(lightTheme);
             setTheme('light');
         }
     };
 
     return (
         <FirebaseProvider value={firebaseProviderSettings}>
-            <Application theme={themeData}>
+            <Application theme={themes[theme]}>
                 <Router>
                     <Layout onSwitchTheme={toggleTheme} theme={theme}>
                         <AppRoutes />

@@ -2,7 +2,7 @@ export const itemDemo = {
     id: 22,
     title: 'Title',
     author: 'Author',
-    ratingCount: 42,
+    ratingCount: 20,
     averageRating: '3',
     language: 'Spanish',
     cover:
@@ -46,6 +46,56 @@ export const itemDemo = {
             title: 'Related purchase item',
             cover:
                 'https://uploads-ssl.webflow.com/5e46eb28f540698137a3a5b3/5e47268c6fdb67cb98b7dcb4_tmp-book.png',
+        },
+    ],
+    ratingStats: [
+        {
+            baseStat: '5',
+            ratingCount: 2,
+            percentage: '20%',
+        },
+        {
+            baseStat: '4',
+            ratingCount: 5,
+            percentage: '20%',
+        },
+        {
+            baseStat: '3',
+            ratingCount: 3,
+            percentage: '20%',
+        },
+        {
+            baseStat: '2',
+            ratingCount: 5,
+            percentage: '20%',
+        },
+        {
+            baseStat: '1',
+            ratingCount: 5,
+            percentage: '20%',
+        },
+    ],
+    reviews: [
+        {
+            photo: 'https://via.placeholder.com/200/200',
+            name: 'John Doe',
+            rating: 3,
+            review:
+                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet consequatur nulla, ab vel ex expedita consequuntur consectetur nisi ducimus error saepe magni ipsam fugiat minima nesciunt aliquid eum. Vel, ut.',
+        },
+        {
+            photo: 'https://via.placeholder.com/200/200',
+            name: 'John Doe',
+            rating: 2,
+            review:
+                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet consequatur nulla, ab vel ex expedita consequuntur consectetur nisi ducimus error saepe magni ipsam fugiat minima nesciunt aliquid eum. Vel, ut.',
+        },
+        {
+            photo: 'https://via.placeholder.com/200/200',
+            name: 'John Doe',
+            rating: 1,
+            review:
+                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet consequatur nulla, ab vel ex expedita consequuntur consectetur nisi ducimus error saepe magni ipsam fugiat minima nesciunt aliquid eum. Vel, ut.',
         },
     ],
 };

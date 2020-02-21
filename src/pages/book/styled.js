@@ -19,3 +19,7 @@ export const RatingWrapper = styled.div`
         text-align: left;
     }
 `;
+
+export const ReviewsFlexWrapper = styled.div`
+    display: flex;
+`;

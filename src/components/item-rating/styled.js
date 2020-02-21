@@ -10,4 +10,5 @@ export const Rating = styled(RainbowRating)`
 export const Label = styled.div`
     font-size: 14px;
     line-height: 1em;
+    color: ${props => props.theme.rainbow.palette.text.header};
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import PropTypes from 'prop-types';
+import { getLanguajeName } from '../helpers';
 import {
     Wrapper,
     Img,
@@ -41,7 +42,7 @@ const ItemInfo = props => {
                 <RenderIf isTrue={hasLanguage}>
                     <Metadata>
                         Language:
-                        <MetadataValue>{language}</MetadataValue>
+                        <MetadataValue>{getLanguajeName(language)}</MetadataValue>
                     </Metadata>
                 </RenderIf>
             </Details>

@@ -65,6 +65,7 @@ export const IntroLabel = styled.h1`
     letter-spacing: 1.6px;
     /* stylelint-disable-next-line value-keyword-case */
     ${props => props.searchState && props.searchState.query && 'font-size: 32px;'}
+    color: ${props => props.theme.rainbow.palette.text.main};
 
     @media screen and (max-width: 991px) {
         font-size: 54px;

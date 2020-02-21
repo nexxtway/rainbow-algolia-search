@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FirebaseProvider } from 'rainbow-firebase-hooks';
 import { Application } from 'react-rainbow-components';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -9,11 +9,13 @@ import Layout from './components/layout';
 const firebaseProviderSettings = { app: firebaseApp };
 
 function App() {
+    const [theme, setTheme] = useState();
+
     return (
         <FirebaseProvider value={firebaseProviderSettings}>
-            <Application>
+            <Application theme={theme}>
                 <Router>
-                    <Layout>
+                    <Layout onSwitchTheme={newTheme => setTheme(newTheme)}>
                         <AppRoutes />
                     </Layout>
                 </Router>

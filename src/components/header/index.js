@@ -1,18 +1,44 @@
-import React from 'react';
-import {
-    Wrapper,
-    LogoWrapper,
-    Logo,
-    TopActions,
-    TopAction,
-    MoonImg,
-    SunImg,
-    GitImg,
-} from './styled';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { ButtonIcon } from 'react-rainbow-components';
+import { MoonIcon, SunIcon, GitIcon } from '../icons';
+import { Wrapper, LogoWrapper, Logo, TopActions, TopAction } from './styled';
 
 const gitUrl = 'https://github.com/nexxtway/rainbow-algolia-search/';
 
-const Header = () => {
+const cyanDarkTheme = {
+    rainbow: {
+        palette: {
+            brand: '#44D7B6',
+            mainBackground: '#212121',
+        },
+    },
+};
+
+const lightTheme = {
+    rainbow: {
+        palette: {
+            brand: '#44D7B6',
+            mainBackground: '#f4f6f9',
+        },
+    },
+};
+
+const Header = ({ onSwitchTheme }) => {
+    const [icon, setIcon] = useState(<MoonIcon />);
+    const [currentTheme, setTheme] = useState('light');
+
+    const toogleTheme = () => {
+        if (currentTheme === 'dark') {
+            setIcon(<MoonIcon />);
+            setTheme('light');
+            return onSwitchTheme(lightTheme);
+        }
+        setIcon(<SunIcon />);
+        setTheme('dark');
+        return onSwitchTheme(cyanDarkTheme);
+    };
+
     return (
         <Wrapper>
             <LogoWrapper>
@@ -20,11 +46,10 @@ const Header = () => {
             </LogoWrapper>
             <TopActions>
                 <TopAction href="#">
-                    <MoonImg />
-                    <SunImg />
+                    <ButtonIcon icon={icon} size="large" onClick={toogleTheme} />
                 </TopAction>
                 <TopAction href={gitUrl} target="_blank">
-                    <GitImg />
+                    <ButtonIcon icon={<GitIcon />} size="large" />
                 </TopAction>
             </TopActions>
         </Wrapper>
@@ -32,3 +57,11 @@ const Header = () => {
 };
 
 export default Header;
+
+Header.propTypes = {
+    onSwitchTheme: PropTypes.func,
+};
+
+Header.defaultProps = {
+    onSwitchTheme: () => {},
+};

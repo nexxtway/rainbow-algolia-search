@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { MoonIcon, SunIcon, GitIcon } from '../icons';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -32,31 +31,5 @@ export const TopActions = styled.div`
 `;
 
 export const TopAction = styled.a`
-    display: inline-block;
-    margin-left: 36px;
-
-    @media screen and (max-width: 767px) {
-        .top-action {
-            margin-left: 26px;
-        }
-    }
-`;
-
-export const MoonImg = styled(MoonIcon)`
-    width: 32px;
-    height: 32px;
-    transition: all 350ms ease;
-`;
-
-export const SunImg = styled(SunIcon)`
-    display: none;
-    width: 32px;
-    height: 32px;
-    transition: all 350ms ease;
-`;
-
-export const GitImg = styled(GitIcon)`
-    width: 32px;
-    height: 32px;
-    transition: all 350ms ease;
+    margin-left: 15px;
 `;

@@ -18,4 +18,5 @@ export const Label = styled.p`
     font-size: 14px;
     line-height: 1em;
     margin-bottom: 7px;
+    color: ${props => props.theme.rainbow.palette.text.header};
 `;

@@ -35,7 +35,7 @@ export const Title = styled.div`
     font-size: 18px;
     line-height: 1.4em;
     font-weight: 700;
-    color: #44d7b6;
+    color: ${props => props.theme.rainbow.palette.brand.main};
 
     @media screen and (max-width: 767px) {
         font-size: 16px;
@@ -47,19 +47,19 @@ export const Metadata = styled.div`
     font-size: 14px;
     line-height: 1em;
     text-align: left;
-    color: #a4a7b5;
+    color: ${props => props.theme.rainbow.palette.text.header};
 `;
 
 export const MetadataFeaturedValue = styled.div`
     margin-left: 8px;
     text-decoration: none;
-    color: #44d7b6;
     display: inline;
+    color: ${props => props.theme.rainbow.palette.text.title};
 `;
 
 export const MetadataValue = styled.div`
     margin-left: 8px;
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.85);
+    color: ${props => props.theme.rainbow.palette.text.main};
     display: inline;
 `;

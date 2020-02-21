@@ -7,14 +7,14 @@ const ItemRelatedPurchase = props => {
     const { id, title, cover, className, style } = props;
 
     const hasId = !!id;
-    const hasTitle = !!title.length;
-    const hasCover = !!cover.length;
+    const hasTitle = !!title;
+    const hasCover = !!cover;
 
     const url = hasId ? `/book/${id}` : ``;
 
     if (hasId && hasTitle) {
         return (
-            <LinkWrapper href={url} className={className} style={style}>
+            <LinkWrapper to={url} className={className} style={style}>
                 <RenderIf isTrue={hasCover}>
                     <HiddenCover src={cover} />
                 </RenderIf>

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper, Link } from './styled';
+import { Wrapper, ArrowImg, Link } from './styled';
 
-const Back = props => {
+const BackLink = props => {
     const { url, className, style } = props;
 
     const hasUrl = !!url.length;
@@ -10,6 +10,7 @@ const Back = props => {
     if (hasUrl) {
         return (
             <Wrapper className={className} style={style}>
+                <ArrowImg />
                 <Link href={url}>Back</Link>
             </Wrapper>
         );
@@ -17,14 +18,14 @@ const Back = props => {
     return null;
 };
 
-export default Back;
+export default BackLink;
 
-Back.propTypes = {
+BackLink.propTypes = {
     url: PropTypes.string,
     className: PropTypes.string,
     style: PropTypes.object,
 };
-Back.defaultProps = {
+BackLink.defaultProps = {
     url: '',
     className: undefined,
     style: undefined,

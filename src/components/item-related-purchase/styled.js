@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const LatoBold = 'Lato Bold';
 
-export const LinkWrapper = styled.a`
+export const LinkWrapper = styled(Link)`
     overflow: hidden;
     position: relative;
     width: auto;

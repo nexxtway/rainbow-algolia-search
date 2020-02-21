@@ -2,7 +2,7 @@ import React from 'react';
 import { itemDemo } from './dummyData';
 import { HeadingFlex, RatingWrapper, ReviewsFlexWrapper } from './styled';
 import Subtitle from '../../components/subtitle';
-import Back from '../../components/back';
+import BackLink from '../../components/back-link';
 import ItemInfo from '../../components/item-info';
 import ItemRating from '../../components/item-rating';
 import ItemSummary from '../../components/item-summary';
@@ -15,7 +15,7 @@ const homeUrl = '/';
 const Book = () => {
     return (
         <div>
-            <Back url={homeUrl} />
+            <BackLink url={homeUrl} />
 
             <HeadingFlex>
                 <ItemInfo

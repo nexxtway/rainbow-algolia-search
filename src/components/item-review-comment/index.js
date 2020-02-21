@@ -20,7 +20,7 @@ const ItemReviewComment = props => {
                     <Avatar src={photo} />
                     <AvatarLabel>{name}</AvatarLabel>
                 </AvatarWrapper>
-                <ItemRating rating={rating} />
+                <ItemRating averageRating={rating} />
             </HeadingWrapper>
             <ReviewWrapper>{review}</ReviewWrapper>
         </Wrapper>

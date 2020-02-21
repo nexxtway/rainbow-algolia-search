@@ -39,9 +39,11 @@ export const Avatar = styled(RainbowAvatar)`
     height: 32px;
 `;
 
-export const AvatarLabel = styled.p`
+export const AvatarLabel = styled.p.attrs(props => {
+    return props.theme.rainbow.palette;
+})`
     margin-left: 12px;
-    color: #000;
+    color: ${props => props.text.label};
     font-size: 18px;
     line-height: 1em;
 `;

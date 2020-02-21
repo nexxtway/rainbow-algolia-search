@@ -12,6 +12,8 @@ import ItemReviewComments from '../../components/item-review-comments';
 
 const homeUrl = '/';
 
+const itemInfoSize = 'large';
+
 const Book = () => {
     return (
         <div>
@@ -26,6 +28,7 @@ const Book = () => {
                     language={itemDemo.language}
                     cover={itemDemo.cover}
                     categories={itemDemo.categories}
+                    size={itemInfoSize}
                 />
                 <RatingWrapper>
                     <ItemRating

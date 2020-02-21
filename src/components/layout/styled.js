@@ -4,7 +4,7 @@ export const MainWrapper = styled.main`
     position: relative;
     width: 100%;
     padding-bottom: 43px;
-    background-color: #f4f6f9;
+    background-color: ${props => props.theme.rainbow.palette.background.secondary};
     font-family: Lato, sans-serif;
     color: #a4a7b5;
     font-weight: 400;

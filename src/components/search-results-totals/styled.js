@@ -4,7 +4,7 @@ const LatoBold = 'Lato Bold';
 
 export const SearchResultsTotalsWrapper = styled.div`
     transition: all 350ms ease;
-    color: rgba(0, 0, 0, 0.5);
+    color: ${props => props.theme.rainbow.palette.text.header};
     font-size: 18px;
     line-height: 1.4em;
 

@@ -19,7 +19,8 @@ export const PresentationWrapper = styled.div`
     padding-top: 59px;
     transition: all 200ms ease;
     margin-top: 43px;
-    ${props => props.searchState && props.searchState.query && 'padding-top: 0; margin-top: 0px;'};
+    /* stylelint-disable-next-line value-keyword-case */
+    ${props => props.searchState && props.searchState.query && 'padding-top: 0; margin-top: 0px;'}
 
     @media screen and (max-width: 767px) {
         padding-top: 49px;
@@ -36,8 +37,8 @@ export const BookImg = styled(BookIcon)`
     margin-bottom: 29px;
     transition: all 200ms ease;
     max-height: 200px;
-    ${props =>
-        props.searchState && props.searchState.query && 'max-height: 0; margin-bottom: 0px;'};
+    /* stylelint-disable-next-line value-keyword-case */
+    ${props => props.searchState && props.searchState.query && 'max-height: 0; margin-bottom: 0px;'}
 
     @media screen and (max-width: 991px) {
         width: 90px;
@@ -62,7 +63,8 @@ export const IntroLabel = styled.h1`
     line-height: 1em;
     font-weight: 400;
     letter-spacing: 1.6px;
-    ${props => props.searchState && props.searchState.query && 'font-size: 32px;'};
+    /* stylelint-disable-next-line value-keyword-case */
+    ${props => props.searchState && props.searchState.query && 'font-size: 32px;'}
 
     @media screen and (max-width: 991px) {
         font-size: 54px;

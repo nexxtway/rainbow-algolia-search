@@ -7,7 +7,8 @@ export const HeadingLabel = styled.div`
     transition: all 200ms ease;
     max-height: 20px;
     overflow: hidden;
-    ${props => props.searchState && props.searchState.query && 'max-height: 0;'};
+    /* stylelint-disable-next-line value-keyword-case */
+    ${props => props.searchState && props.searchState.query && 'max-height: 0;'}
 
     @media screen and (max-width: 991px) {
         font-size: 20px;

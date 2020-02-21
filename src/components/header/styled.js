@@ -3,7 +3,7 @@ import { MoonIcon, SunIcon, GitIcon } from '../icons';
 
 export const Wrapper = styled.div`
     display: flex;
-    margin: 0 auto 43px auto;
+    margin: 0 auto 0 auto;
     align-items: center;
     text-align: center;
     width: 100%;

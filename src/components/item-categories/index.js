@@ -8,8 +8,8 @@ const ItemCategories = props => {
 
     const hasCategories = !!categories.length;
 
-    if (hasCategories) {
-        return (
+    return (
+        <RenderIf isTrue={hasCategories}>
             <Wrapper className={className} style={style}>
                 <Label>Categories</Label>
 
@@ -19,9 +19,8 @@ const ItemCategories = props => {
                     return <Badge label={category} key={key} />;
                 })}
             </Wrapper>
-        );
-    }
-    return null;
+        </RenderIf>
+    );
 };
 
 export default ItemCategories;

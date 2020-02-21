@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RenderIf from 'react-rainbow-components';
 import { Wrapper, ArrowImg, Link } from './styled';
 
 const BackLink = props => {
@@ -7,15 +8,14 @@ const BackLink = props => {
 
     const hasUrl = !!url.length;
 
-    if (hasUrl) {
-        return (
+    return (
+        <RenderIf isTrue={hasUrl}>
             <Wrapper className={className} style={style}>
                 <ArrowImg />
                 <Link href={url}>Back</Link>
             </Wrapper>
-        );
-    }
-    return null;
+        </RenderIf>
+    );
 };
 
 export default BackLink;

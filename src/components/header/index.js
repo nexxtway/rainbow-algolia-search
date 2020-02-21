@@ -1,18 +1,14 @@
 import React from 'react';
-import {
-    Wrapper,
-    LogoWrapper,
-    Logo,
-    TopActions,
-    TopAction,
-    MoonImg,
-    SunImg,
-    GitImg,
-} from './styled';
+import PropTypes from 'prop-types';
+import { ButtonIcon } from 'react-rainbow-components';
+import { MoonIcon, SunIcon, GitIcon } from '../icons';
+import { Wrapper, LogoWrapper, Logo, TopActions, TopAction } from './styled';
 
 const gitUrl = 'https://github.com/nexxtway/rainbow-algolia-search/';
 
-const Header = () => {
+const Header = ({ onSwitchTheme, theme }) => {
+    const icon = theme === 'light' ? <MoonIcon /> : <SunIcon />;
+
     return (
         <Wrapper>
             <LogoWrapper>
@@ -20,11 +16,10 @@ const Header = () => {
             </LogoWrapper>
             <TopActions>
                 <TopAction href="#">
-                    <MoonImg />
-                    <SunImg />
+                    <ButtonIcon icon={icon} size="large" onClick={onSwitchTheme} />
                 </TopAction>
                 <TopAction href={gitUrl} target="_blank">
-                    <GitImg />
+                    <ButtonIcon icon={<GitIcon />} size="large" />
                 </TopAction>
             </TopActions>
         </Wrapper>
@@ -32,3 +27,13 @@ const Header = () => {
 };
 
 export default Header;
+
+Header.propTypes = {
+    onSwitchTheme: PropTypes.func,
+    theme: PropTypes.string,
+};
+
+Header.defaultProps = {
+    onSwitchTheme: () => {},
+    theme: '',
+};

@@ -4,10 +4,10 @@ import { MainWrapper, Container } from './styled';
 import Header from '../header';
 import Footer from '../footer';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, onSwitchTheme, theme }) => (
     <>
         <MainWrapper>
-            <Header />
+            <Header onSwitchTheme={onSwitchTheme} theme={theme} />
             <Container>{children}</Container>
             <Footer />
         </MainWrapper>
@@ -18,8 +18,12 @@ export default Layout;
 
 Layout.propTypes = {
     children: PropTypes.node,
+    onSwitchTheme: PropTypes.func,
+    theme: PropTypes.string,
 };
 
 Layout.defaultProps = {
     children: null,
+    onSwitchTheme: () => {},
+    theme: '',
 };

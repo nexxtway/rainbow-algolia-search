@@ -8,7 +8,7 @@ import ItemRating from '../../components/item-rating';
 import ItemSummary from '../../components/item-summary';
 import ItemRelatedPurchases from '../../components/item-related-purchases';
 import ItemReviewStats from '../../components/item-review-stats';
-// import ItemReviewComments from '../../components/item-review-comments';
+import ItemReviewComments from '../../components/item-review-comments';
 
 const homeUrl = '/';
 
@@ -46,6 +46,7 @@ const Book = () => {
                     ratingCount={itemDemo.ratingCount}
                     ratingStats={itemDemo.ratingStats}
                 />
+                <ItemReviewComments reviews={itemDemo.reviews} />
             </ReviewsFlexWrapper>
         </div>
     );

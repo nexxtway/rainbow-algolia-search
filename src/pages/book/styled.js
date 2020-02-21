@@ -22,4 +22,8 @@ export const RatingWrapper = styled.div`
 
 export const ReviewsFlexWrapper = styled.div`
     display: flex;
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+    }
 `;

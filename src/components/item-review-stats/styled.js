@@ -23,7 +23,7 @@ export const RatingCount = styled.p`
 
 export const RatingAverageWrapper = styled.div`
     display: flex;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     justify-content: space-between;
     align-items: center;
 

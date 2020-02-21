@@ -18,16 +18,15 @@ const ItemRelatedPurchases = props => {
 
                 <FlexWrapper>
                     {items.slice(0, limit).map((item, index) => {
-                        const key = `${item}-${index}`;
+                        const key = `${item.id}-${index}`;
 
                         return (
-                            <div key={key}>
-                                <ItemRelatedPurchase
-                                    id={item.id}
-                                    title={item.title}
-                                    cover={item.cover}
-                                />
-                            </div>
+                            <ItemRelatedPurchase
+                                key={key}
+                                id={item.id}
+                                title={item.title}
+                                cover={item.cover}
+                            />
                         );
                     })}
                 </FlexWrapper>

@@ -52,27 +52,27 @@ export const itemDemo = {
         {
             baseStat: '5',
             ratingCount: 2,
-            percentage: '20%',
+            percentage: 20,
         },
         {
             baseStat: '4',
             ratingCount: 5,
-            percentage: '20%',
+            percentage: 20,
         },
         {
             baseStat: '3',
             ratingCount: 3,
-            percentage: '20%',
+            percentage: 20,
         },
         {
             baseStat: '2',
             ratingCount: 5,
-            percentage: '20%',
+            percentage: 30,
         },
         {
             baseStat: '1',
             ratingCount: 5,
-            percentage: '20%',
+            percentage: 55,
         },
     ],
     reviews: [

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { ProgressBar as RainbowProgressBar } from 'react-rainbow-components';
 
 export const Wrapper = styled.div`
     position: relative;
@@ -14,14 +15,21 @@ export const Label = styled.p`
     line-height: 1em;
 `;
 
+export const ProgressWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
 export const Percentage = styled.div`
-    position: absolute;
-    left: auto;
-    top: auto;
-    right: 0%;
-    bottom: -3px;
     color: #ffb900;
     font-size: 12px;
     line-height: 1em;
     font-weight: 900;
+`;
+
+export const ProgressBar = styled(RainbowProgressBar)`
+    width: 100%;
+    max-width: 151px;
+    line-height: 1em;
 `;

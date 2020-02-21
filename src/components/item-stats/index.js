@@ -1,6 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper, Label, Percentage } from './styled';
+import { Wrapper, Label, ProgressWrapper, ProgressBar, Percentage } from './styled';
+
+const config = {
+    size: 'small',
+    variant: 'brand',
+};
 
 const ItemStats = props => {
     const { ratingStats, className, style } = props;
@@ -13,7 +18,14 @@ const ItemStats = props => {
                 {ratingStats.map(stat => (
                     <Wrapper key={stat.baseStat}>
                         <Label>{stat.baseStat} stars</Label>
-                        <Percentage>{stat.percentage}</Percentage>
+                        <ProgressWrapper>
+                            <ProgressBar
+                                value={stat.percentage}
+                                size={config.size}
+                                variant={config.variant}
+                            />
+                            <Percentage>{stat.percentage} %</Percentage>
+                        </ProgressWrapper>
                     </Wrapper>
                 ))}
             </div>

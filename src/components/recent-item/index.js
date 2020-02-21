@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { HeadingLabel } from '../../styled';
 import { Wrapper, Link } from './styled';
 
@@ -10,17 +11,16 @@ const RecentItem = props => {
 
     const itemUrl = hasValues ? `/book/${id}` : '';
 
-    if (hasValues) {
-        return (
+    return (
+        <RenderIf isTrue={hasValues}>
             <Wrapper className={className} style={style}>
                 <HeadingLabel>
                     Recent Book:
                     <Link href={itemUrl}>{title}</Link>
                 </HeadingLabel>
             </Wrapper>
-        );
-    }
-    return null;
+        </RenderIf>
+    );
 };
 
 export default RecentItem;

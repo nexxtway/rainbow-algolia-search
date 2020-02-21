@@ -1,6 +1,7 @@
 import React from 'react';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import PropTypes from 'prop-types';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { Badge } from 'react-rainbow-components';
 import { Wrapper, Label } from './styled';
 
@@ -9,8 +10,8 @@ const ItemCategories = props => {
 
     const hasCategories = !!categories.length;
 
-    if (hasCategories) {
-        return (
+    return (
+        <RenderIf isTrue={hasCategories}>
             <Wrapper className={className} style={style}>
                 <RenderIf isTrue={!hideLabel}>
                     <Label>Categories</Label>
@@ -22,9 +23,8 @@ const ItemCategories = props => {
                     return <Badge label={category} key={key} />;
                 })}
             </Wrapper>
-        );
-    }
-    return null;
+        </RenderIf>
+    );
 };
 
 export default ItemCategories;

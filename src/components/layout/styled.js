@@ -8,6 +8,7 @@ export const MainWrapper = styled.main`
     font-family: Lato, sans-serif;
     color: #a4a7b5;
     font-weight: 400;
+    min-height: 100vh;
 `;
 
 export const Container = styled.main`

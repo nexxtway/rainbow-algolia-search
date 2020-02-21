@@ -16,7 +16,7 @@
         "react-rainbow-components": "1.12.0-canary.1c7e078",
         "react-router-dom": "^5.1.2",
         "react-scripts": "3.3.1",
-        "styled-components": "^5.0.1"
+        "styled-components": "^4.3.2"
     },
     "scripts": {
         "start": "react-scripts start",

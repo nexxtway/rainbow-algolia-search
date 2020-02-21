@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { Badge } from 'react-rainbow-components';
 import { Wrapper, Label } from './styled';
 

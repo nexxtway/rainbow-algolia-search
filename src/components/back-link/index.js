@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RenderIf from 'react-rainbow-components';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
 import { Wrapper, ArrowImg, Link } from './styled';
 
 const BackLink = props => {

@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const hasLargeSize = size => {
+    return size && size === 'large';
+};
+
 export const Wrapper = styled.div`
     display: flex;
     padding-right: 20px;
@@ -16,7 +20,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Img = styled.img`
-    width: 73px;
+    width: ${props => (hasLargeSize(props.size) ? '131px' : '73px')};
     height: auto;
     transition: all 200ms ease;
 `;
@@ -32,19 +36,19 @@ export const Title = styled.div`
     margin-top: 0;
     margin-bottom: 10px;
     transition: all 200ms ease;
-    font-size: 18px;
+    font-size: ${props => (hasLargeSize(props.size) ? '24px' : '18px')};
     line-height: 1.4em;
     font-weight: 700;
     color: ${props => props.theme.rainbow.palette.brand.main};
 
     @media screen and (max-width: 767px) {
-        font-size: 16px;
+        font-size: ${props => (hasLargeSize(props.size) ? '21px' : '16px')};
     }
 `;
 
 export const Metadata = styled.div`
     margin-bottom: 9px;
-    font-size: 14px;
+    font-size: ${props => (hasLargeSize(props.size) ? '18px' : '14px')};
     line-height: 1em;
     text-align: left;
     color: ${props => props.theme.rainbow.palette.text.header};
@@ -54,7 +58,7 @@ export const MetadataFeaturedValue = styled.div`
     margin-left: 8px;
     text-decoration: none;
     display: inline;
-    color: ${props => props.theme.rainbow.palette.text.title};
+    color: ${props => props.theme.rainbow.palette.brand.main};
 `;
 
 export const MetadataValue = styled.div`

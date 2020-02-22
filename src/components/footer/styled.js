@@ -15,9 +15,11 @@ export const Wrapper = styled.div`
     justify-content: space-between;
 `;
 
-export const Copyright = styled.div`
+export const Copyright = styled.p.attrs(props => {
+    return props.theme.rainbow.palette;
+})`
     width: 100%;
-    color: #576574;
+    color: ${props => props.text.label};
     font-size: 16px;
     text-align: center;
     padding-bottom: 5px;

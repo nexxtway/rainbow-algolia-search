@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const LatoBold = 'Lato Bold';
-
 export const LinkWrapper = styled(Link)`
     overflow: hidden;
     position: relative;
@@ -36,10 +34,9 @@ export const Mask = styled.div`
         left top,
         left bottom,
         from(transparent),
-        to(rgba(0, 0, 0, 0.7))
+        to(rgba(0, 0, 0, 0.5))
     );
-    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.7));
-    box-shadow: 0 1px 3px 0 #e3e5ed;
+    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
 `;
 
 export const HiddenCover = styled.img`
@@ -53,5 +50,4 @@ export const Title = styled.h3`
     color: #fff;
     font-size: 12px;
     line-height: 1.4em;
-    font-weight: ${LatoBold};
 `;

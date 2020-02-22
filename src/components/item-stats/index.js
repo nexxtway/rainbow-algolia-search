@@ -1,10 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Application } from 'react-rainbow-components';
 import { Wrapper, Label, ProgressWrapper, ProgressBar, Percentage } from './styled';
 
-const config = {
+const progressBarConfig = {
     size: 'small',
-    variant: 'brand',
+    variant: 'success',
+};
+
+const theme = {
+    rainbow: {
+        palette: {
+            success: '#ffb900',
+        },
+    },
 };
 
 const ItemStats = props => {
@@ -14,21 +23,21 @@ const ItemStats = props => {
 
     if (hasStats) {
         return (
-            <div className={className} style={style}>
+            <Application className={className} style={style} theme={theme}>
                 {ratingStats.map(stat => (
                     <Wrapper key={stat.baseStat}>
                         <Label>{stat.baseStat} stars</Label>
                         <ProgressWrapper>
                             <ProgressBar
                                 value={stat.percentage}
-                                size={config.size}
-                                variant={config.variant}
+                                size={progressBarConfig.size}
+                                variant={progressBarConfig.variant}
                             />
                             <Percentage>{stat.percentage} %</Percentage>
                         </ProgressWrapper>
                     </Wrapper>
                 ))}
-            </div>
+            </Application>
         );
     }
     return null;

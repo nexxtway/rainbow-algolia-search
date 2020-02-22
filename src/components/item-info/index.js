@@ -13,7 +13,7 @@ import {
 } from './styled';
 
 const ItemInfo = props => {
-    const { title, author, publisher, language, cover, className, style } = props;
+    const { title, author, publisher, language, cover, size, className, style } = props;
 
     const hasAuthor = !!author.length;
     const hasPublisher = !!publisher.length;
@@ -21,26 +21,26 @@ const ItemInfo = props => {
 
     return (
         <Wrapper className={className} style={style}>
-            <Img src={cover} />
+            <Img src={cover} size={size} />
             <Details>
-                <Title>{title}</Title>
+                <Title size={size}>{title}</Title>
 
                 <RenderIf isTrue={hasAuthor}>
-                    <Metadata>
+                    <Metadata size={size}>
                         By:
                         <MetadataFeaturedValue>{author}</MetadataFeaturedValue>
                     </Metadata>
                 </RenderIf>
 
                 <RenderIf isTrue={hasPublisher}>
-                    <Metadata>
+                    <Metadata size={size}>
                         Published by:
-                        <MetadataValue>{publisher}</MetadataValue>
+                        <MetadataFeaturedValue>{publisher}</MetadataFeaturedValue>
                     </Metadata>
                 </RenderIf>
 
                 <RenderIf isTrue={hasLanguage}>
-                    <Metadata>
+                    <Metadata size={size}>
                         Language:
                         <MetadataValue>{getLanguajeName(language)}</MetadataValue>
                     </Metadata>
@@ -58,6 +58,7 @@ ItemInfo.propTypes = {
     publisher: PropTypes.string,
     language: PropTypes.string,
     cover: PropTypes.string,
+    size: PropTypes.string, // normal | large
     className: PropTypes.string,
     style: PropTypes.object,
 };
@@ -67,6 +68,7 @@ ItemInfo.defaultProps = {
     publisher: '',
     language: '',
     cover: '',
+    size: 'normal',
     className: undefined,
     style: undefined,
 };

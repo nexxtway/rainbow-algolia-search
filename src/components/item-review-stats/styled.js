@@ -44,9 +44,11 @@ export const ItemRatingAverage = styled(ItemRating)`
     }
 `;
 
-export const RatingAverage = styled.div`
+export const RatingAverage = styled.div.attrs(props => {
+    return props.theme.rainbow.palette;
+})`
     margin-top: -4px;
-    color: rgba(0, 0, 0, 0.85);
+    color: ${props => props.text.label};
     font-size: 16px;
     line-height: 1em;
 `;

@@ -13,17 +13,20 @@ import ResultCount from '../../algolia-components/result-count';
 import {
     DisplayIfQueryInput,
     DisplayIfResults,
+    DisplayIfNotResults,
 } from '../../algolia-components/conditional-display';
+import NoResult from '../../components/no-find-result';
 
 const IntroLabelAlgolia = connectStateResults(IntroLabel);
 const BookImgAlgolia = connectStateResults(BookImg);
 const PresentationWrapperAlgolia = connectStateResults(PresentationWrapper);
 const HeadingLabelAlgolia = connectStateResults(HeadingLabel);
+const WrapperAlgolia = connectStateResults(Wrapper);
 
 const Home = () => {
     return (
         <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
-            <Wrapper>
+            <WrapperAlgolia>
                 <PresentationWrapperAlgolia>
                     <BookImgAlgolia />
                     <IntroLabelAlgolia>Find Books</IntroLabelAlgolia>
@@ -39,7 +42,9 @@ const Home = () => {
                     />
                     <RecentItem />
                     <DisplayIfQueryInput>
-                        <SearchResultsDescription />
+                        <DisplayIfResults>
+                            <SearchResultsDescription />
+                        </DisplayIfResults>
                     </DisplayIfQueryInput>
 
                     <DisplayIfQueryInput>
@@ -47,8 +52,14 @@ const Home = () => {
                             <ResultsAlgolia component={SearchResultItem} />
                         </DisplayIfResults>
                     </DisplayIfQueryInput>
+
+                    <DisplayIfQueryInput>
+                        <DisplayIfNotResults>
+                            <NoResult />
+                        </DisplayIfNotResults>
+                    </DisplayIfQueryInput>
                 </PresentationWrapperAlgolia>
-            </Wrapper>
+            </WrapperAlgolia>
         </InstantSearch>
     );
 };

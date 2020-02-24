@@ -5,9 +5,11 @@ import { BookIcon } from '../../components/icons';
 export const Wrapper = styled.div`
     overflow: hidden;
     margin-bottom: 32px;
-    transition: all 350ms ease;
+    transition: all 300ms ease;
     color: rgba(0, 0, 0, 0.85);
     text-align: center;
+    /* stylelint-disable-next-line value-keyword-case */
+    ${props => props.searchState && props.searchState.query && 'overflow: visible;'}
 
     @media screen and (max-width: 991px) {
         margin-bottom: 16px;
@@ -17,10 +19,10 @@ export const Wrapper = styled.div`
 export const PresentationWrapper = styled.div`
     margin-bottom: 36px;
     padding-top: 59px;
-    transition: all 200ms ease;
-    margin-top: 43px;
+    transition: all 300ms ease;
+    margin-top: 36px;
     /* stylelint-disable-next-line value-keyword-case */
-    ${props => props.searchState && props.searchState.query && 'padding-top: 0; margin-top: 0px;'}
+    ${props => props.searchState && props.searchState.query && 'padding-top: 0; margin-top: -50px;'}
 
     @media screen and (max-width: 767px) {
         padding-top: 49px;
@@ -35,7 +37,7 @@ export const BookImg = styled(BookIcon)`
     width: 110px;
     height: auto;
     margin-bottom: 29px;
-    transition: all 200ms ease;
+    transition: all 150ms ease;
     max-height: 200px;
     /* stylelint-disable-next-line value-keyword-case */
     ${props => props.searchState && props.searchState.query && 'max-height: 0; margin-bottom: 0px;'}
@@ -56,15 +58,16 @@ export const BookImg = styled(BookIcon)`
 
 export const IntroLabel = styled.h1`
     margin-top: 0;
-    margin-bottom: 0;
     transition: all 350ms ease;
     font-family: Montserrat, sans-serif;
     font-size: 64px;
     line-height: 1em;
     font-weight: 400;
+    margin-bottom: 29px;
     letter-spacing: 1.6px;
     /* stylelint-disable-next-line value-keyword-case */
-    ${props => props.searchState && props.searchState.query && 'font-size: 32px;'}
+    ${props =>
+        props.searchState && props.searchState.query && 'margin-bottom: 0px;font-size: 32px;'}
     color: ${props => props.theme.rainbow.palette.text.main};
 
     @media screen and (max-width: 991px) {

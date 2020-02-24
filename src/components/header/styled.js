@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     display: flex;
-    margin: 0 auto 36px auto;
+    margin: 0 auto 20px auto;
     align-items: center;
     text-align: center;
     width: 100%;
     max-width: 1393px;
-    padding: 43px 20px 0 20px;
+    padding: 20px 20px 0 20px;
     justify-content: space-between;
 `;
 

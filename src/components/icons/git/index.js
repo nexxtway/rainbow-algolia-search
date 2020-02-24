@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const GitIcon = props => {
-    const { className, style } = props;
+    const { theme, className, style } = props;
+
+    const fillColor = theme === 'dark' ? '#b2b2b2' : '#061C3F';
 
     return (
         <svg
@@ -19,7 +21,7 @@ const GitIcon = props => {
                 <g
                     id="book-summary"
                     transform="translate(-1360.000000, -28.000000)"
-                    fill="#061C3F"
+                    fill={fillColor}
                     fillRule="nonzero"
                 >
                     <g id="github" transform="translate(1360.000000, 28.000000)">
@@ -35,10 +37,12 @@ const GitIcon = props => {
 };
 
 GitIcon.propTypes = {
+    theme: PropTypes.string,
     className: PropTypes.string,
     style: PropTypes.object,
 };
 GitIcon.defaultProps = {
+    theme: '',
     className: undefined,
     style: undefined,
 };

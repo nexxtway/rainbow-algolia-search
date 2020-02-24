@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ItemCategories from '../item-categories';
 import ItemRating from '../item-rating';
 import ItemInfo from '../item-info';
-import { Wrapper, LinkWrapper, FlexWrapper, RatingWrapper, CategoriesWrapper } from './styled';
+import { Wrapper, LinkWrapper, FlexWrapper, FlexRight, RatingWrapper } from './styled';
 
 const SearchResultItem = props => {
     const {
@@ -35,17 +35,15 @@ const SearchResultItem = props => {
                             cover={cover}
                         />
                     </div>
-                    <div>
+                    <FlexRight>
                         <RatingWrapper>
                             <ItemRating
                                 averageRating={Math.round(Number(averageRating))}
                                 ratingCount={ratingCount}
                             />
                         </RatingWrapper>
-                        <CategoriesWrapper>
-                            <ItemCategories categories={categories} />
-                        </CategoriesWrapper>
-                    </div>
+                        <ItemCategories categories={categories} />
+                    </FlexRight>
                 </FlexWrapper>
             </LinkWrapper>
         </Wrapper>

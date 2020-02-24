@@ -14,6 +14,7 @@ export const HeadingFlex = styled.div`
 export const RatingWrapper = styled.div`
     text-align: right;
     margin-bottom: 17px;
+    flex-shrink: 0;
 
     @media screen and (max-width: 767px) {
         text-align: left;

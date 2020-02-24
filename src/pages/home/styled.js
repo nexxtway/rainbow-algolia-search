@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import InputSearch from '../../algolia-components/search-input';
 import { BookIcon } from '../../components/icons';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
     overflow: hidden;
@@ -11,7 +12,7 @@ export const Wrapper = styled.div`
     /* stylelint-disable-next-line value-keyword-case */
     ${props => props.searchState && props.searchState.query && 'overflow: visible;'}
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         margin-bottom: 16px;
     }
 `;
@@ -24,12 +25,8 @@ export const PresentationWrapper = styled.div`
     /* stylelint-disable-next-line value-keyword-case */
     ${props => props.searchState && props.searchState.query && 'padding-top: 0; margin-top: -50px;'}
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         padding-top: 49px;
-    }
-
-    @media screen and (max-width: 479px) {
-        padding-top: 39px;
     }
 `;
 
@@ -42,17 +39,13 @@ export const BookImg = styled(BookIcon)`
     /* stylelint-disable-next-line value-keyword-case */
     ${props => props.searchState && props.searchState.query && 'max-height: 0; margin-bottom: 0px;'}
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         width: 90px;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         width: 80px;
         margin-bottom: 24px;
-    }
-
-    @media screen and (max-width: 479px) {
-        width: 70px;
     }
 `;
 
@@ -70,16 +63,12 @@ export const IntroLabel = styled.h1`
         props.searchState && props.searchState.query && 'margin-bottom: 0px;font-size: 32px;'}
     color: ${props => props.theme.rainbow.palette.text.main};
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         font-size: 54px;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         font-size: 44px;
-    }
-
-    @media screen and (max-width: 479px) {
-        font-size: 34px;
     }
 `;
 
@@ -91,7 +80,7 @@ export const RecentItem = styled.a`
     background-repeat: no-repeat;
     margin-left: 5px;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         background-size: 12px 12px;
     }
 `;

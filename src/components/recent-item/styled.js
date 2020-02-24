@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
     margin-bottom: 30px;
@@ -14,7 +15,7 @@ export const Link = styled.a`
     color: #44d7b6;
     text-decoration: underline;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         background-size: 12px 12px;
     }
 `;

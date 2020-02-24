@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { MediaSizes } from '../../constants';
 
 export const LinkWrapper = styled(Link)`
     overflow: hidden;
@@ -12,7 +13,7 @@ export const LinkWrapper = styled(Link)`
     display: block;
     max-width: 145px;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         margin-right: 20px;
         margin-bottom: 14px;
     }

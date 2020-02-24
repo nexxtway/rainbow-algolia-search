@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
 import BackArrowIcon from '../icons/back-arrow';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -25,7 +26,7 @@ export const Link = styled(RouterLink)`
         color: #44d7b6;
     }
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         font-size: 18px;
     }
 `;
@@ -34,7 +35,7 @@ export const ArrowImg = styled(BackArrowIcon)`
     margin-right: 10px;
     width: 26px;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         width: 19px;
     }
 `;

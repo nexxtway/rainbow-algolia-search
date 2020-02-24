@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Card } from 'react-rainbow-components';
 import { Link } from 'react-router-dom';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled(Card)`
     position: relative;
@@ -26,7 +27,7 @@ export const FlexWrapper = styled.div`
     align-items: stretch;
     justify-content: space-between;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         align-items: flex-start;
         flex-direction: column;
     }
@@ -40,7 +41,7 @@ export const FlexRight = styled.div`
     align-items: flex-end;
     text-align: right;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         width: 100%;
         align-items: center;
         text-align: center;

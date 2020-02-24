@@ -58,15 +58,16 @@ export const BookImg = styled(BookIcon)`
 
 export const IntroLabel = styled.h1`
     margin-top: 0;
-    margin-bottom: 0;
-    transition: all 300ms ease;
+    transition: all 350ms ease;
     font-family: Montserrat, sans-serif;
     font-size: 64px;
     line-height: 1em;
     font-weight: 400;
+    margin-bottom: 29px;
     letter-spacing: 1.6px;
     /* stylelint-disable-next-line value-keyword-case */
-    ${props => props.searchState && props.searchState.query && 'font-size: 32px;'}
+    ${props =>
+        props.searchState && props.searchState.query && 'margin-bottom: 0px;font-size: 32px;'}
     color: ${props => props.theme.rainbow.palette.text.main};
 
     @media screen and (max-width: 991px) {

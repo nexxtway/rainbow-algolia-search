@@ -13,7 +13,9 @@ import ResultCount from '../../algolia-components/result-count';
 import {
     DisplayIfQueryInput,
     DisplayIfResults,
+    DisplayIfNotResults,
 } from '../../algolia-components/conditional-display';
+import NoResult from '../../components/no-find-result';
 
 const IntroLabelAlgolia = connectStateResults(IntroLabel);
 const BookImgAlgolia = connectStateResults(BookImg);
@@ -47,6 +49,12 @@ const Home = () => {
                         <DisplayIfResults>
                             <ResultsAlgolia component={SearchResultItem} />
                         </DisplayIfResults>
+                    </DisplayIfQueryInput>
+
+                    <DisplayIfQueryInput>
+                        <DisplayIfNotResults>
+                            <NoResult />
+                        </DisplayIfNotResults>
                     </DisplayIfQueryInput>
                 </PresentationWrapperAlgolia>
             </WrapperAlgolia>

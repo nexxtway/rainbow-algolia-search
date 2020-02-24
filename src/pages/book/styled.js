@@ -17,7 +17,6 @@ export const RatingWrapper = styled.div`
     flex-shrink: 0;
     text-align: right;
     margin-bottom: 17px;
-    flex-shrink: 0;
 
     @media screen and (max-width: 767px) {
         width: 100%;

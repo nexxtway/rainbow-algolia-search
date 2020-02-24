@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonIcon } from 'react-rainbow-components';
+import { Link } from 'react-router-dom';
 import { MoonIcon, SunIcon, GitIcon } from '../icons';
 import { Wrapper, LogoWrapper, Logo, TopActions, TopAction } from './styled';
 
+const homePageUrl = '/';
 const gitUrl = 'https://github.com/nexxtway/rainbow-algolia-search/';
 
 const Header = ({ onSwitchTheme, theme }) => {
@@ -12,7 +14,9 @@ const Header = ({ onSwitchTheme, theme }) => {
     return (
         <Wrapper>
             <LogoWrapper>
-                <Logo src="/assets/logo.svg" />
+                <Link to={homePageUrl}>
+                    <Logo src="/assets/logo.svg" />
+                </Link>
             </LogoWrapper>
             <TopActions>
                 <TopAction href="#">

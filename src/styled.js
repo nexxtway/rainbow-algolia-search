@@ -22,3 +22,8 @@ export const HeadingLabel = styled.div`
         font-size: 14px;
     }
 `;
+
+export const ContainerMedium = styled.div`
+    max-width: 1030px;
+    margin: 0 auto;
+`;

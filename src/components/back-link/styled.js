@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 import BackArrowIcon from '../icons/back-arrow';
 
 export const Wrapper = styled.div`
@@ -6,7 +7,7 @@ export const Wrapper = styled.div`
     width: 100%;
 `;
 
-export const Link = styled.a`
+export const Link = styled(RouterLink)`
     font-size: 24px;
     line-height: 1em;
     color: #44d7b6;

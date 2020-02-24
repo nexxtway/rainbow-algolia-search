@@ -11,7 +11,7 @@ const BackLink = props => {
     return (
         <RenderIf isTrue={hasUrl}>
             <Wrapper className={className} style={style}>
-                <Link href={url}>
+                <Link to={url}>
                     <ArrowImg />
                     Back
                 </Link>

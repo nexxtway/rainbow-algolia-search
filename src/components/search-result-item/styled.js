@@ -18,6 +18,18 @@ export const LinkWrapper = styled(Link)`
     &:hover {
         text-decoration: none;
     }
+
+    &:link {
+        text-decoration: none;
+    }
+
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:active {
+        text-decoration: none;
+    }
 `;
 
 export const FlexWrapper = styled.div`

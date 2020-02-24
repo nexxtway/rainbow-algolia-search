@@ -19,7 +19,7 @@ const ItemRelatedPurchase = props => {
                     <HiddenCover src={cover} />
                 </RenderIf>
 
-                <img src="/assets/placeholders/book-200x226.png" alt="" />
+                <img src={cover} alt="" />
 
                 <Mask>
                     <Title className="related-title">{title}</Title>
@@ -33,7 +33,7 @@ const ItemRelatedPurchase = props => {
 export default ItemRelatedPurchase;
 
 ItemRelatedPurchase.propTypes = {
-    id: PropTypes.number,
+    id: PropTypes.string,
     title: PropTypes.string,
     cover: PropTypes.string,
     className: PropTypes.string,
@@ -41,7 +41,7 @@ ItemRelatedPurchase.propTypes = {
 };
 
 ItemRelatedPurchase.defaultProps = {
-    id: 0,
+    id: '0',
     title: '',
     cover: '',
     className: undefined,

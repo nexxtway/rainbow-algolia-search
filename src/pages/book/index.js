@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDocOnce } from 'rainbow-firebase-hooks';
 import { Spinner } from 'react-rainbow-components';
@@ -13,12 +13,25 @@ import ItemReviewStats from '../../components/item-review-stats';
 import ItemReviewComments from '../../components/item-review-comments';
 import getRatingCount from '../../helpers/getRatingCount';
 import getStatsFromStars from '../../helpers/getStatsFromStars';
+import { fetchBooks } from '../../services/algolia';
 
 const Book = () => {
     const { id } = useParams();
     const [currentBook, isLoading] = useDocOnce({
         path: `books/${id}`,
     });
+    const [relatedBooks, setRelatedBooks] = useState([]);
+
+    useEffect(() => {
+        if (currentBook && currentBook.data.authors) {
+            const bookAuthors = currentBook.data.authors.split(',');
+            const firstAuthor = bookAuthors[0];
+
+            fetchBooks(firstAuthor).then(books => {
+                setRelatedBooks(books);
+            });
+        }
+    }, [currentBook]);
 
     if (isLoading) return <Spinner />;
 
@@ -54,7 +67,12 @@ const Book = () => {
 
             <ItemSummary summary={summary} />
 
-            <ItemRelatedPurchases items={itemDemo.relatedItems} />
+            <ItemRelatedPurchases
+                items={relatedBooks.map(book => ({
+                    id: book.objectID,
+                    ...book,
+                }))}
+            />
 
             <Subtitle>Customer Reviews</Subtitle>
             <ReviewsFlexWrapper>

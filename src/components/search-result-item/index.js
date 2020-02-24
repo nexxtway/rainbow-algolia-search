@@ -24,7 +24,7 @@ const SearchResultItem = props => {
 
     return (
         <Wrapper className={className} style={style}>
-            <LinkWrapper href={bookUrl}>
+            <LinkWrapper to={bookUrl}>
                 <FlexWrapper>
                     <div>
                         <ItemInfo

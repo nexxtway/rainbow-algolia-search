@@ -9,7 +9,9 @@ const homePageUrl = '/';
 const gitUrl = 'https://github.com/nexxtway/rainbow-algolia-search/';
 
 const Header = ({ onSwitchTheme, theme }) => {
-    const icon = theme === 'light' ? <MoonIcon /> : <SunIcon />;
+    const switchIcon = theme === 'light' ? <MoonIcon /> : <SunIcon />;
+
+    const gitIcon = <GitIcon theme={theme} />;
 
     return (
         <Wrapper>
@@ -20,10 +22,10 @@ const Header = ({ onSwitchTheme, theme }) => {
             </LogoWrapper>
             <TopActions>
                 <TopAction href="#">
-                    <ButtonIcon icon={icon} size="large" onClick={onSwitchTheme} />
+                    <ButtonIcon icon={switchIcon} size="large" onClick={onSwitchTheme} />
                 </TopAction>
                 <TopAction href={gitUrl} target="_blank">
-                    <ButtonIcon icon={<GitIcon />} size="large" />
+                    <ButtonIcon icon={gitIcon} size="large" />
                 </TopAction>
             </TopActions>
         </Wrapper>

@@ -41,11 +41,14 @@ export const FlexRight = styled.div`
     text-align: right;
 
     @media screen and (max-width: 767px) {
-        align-items: flex-start;
-        text-align: left;
+        width: 100%;
+        align-items: center;
+        text-align: center;
     }
 `;
 
-export const RatingWrapper = styled.div`
-    margin-bottom: 15px;
+export const CategoriesWrapper = styled.div`
+    @media screen and (max-width: 767px) {
+        padding-top: 15px;
+    }
 `;

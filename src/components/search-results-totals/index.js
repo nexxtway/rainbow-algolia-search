@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
-import { SearchResultsTotalsWrapper } from './styled';
+import { SearchResultsTotalsWrapper, ResultsLabel } from './styled';
 
 const SearchResultsTotals = props => {
     const { search, found } = props;
@@ -9,10 +9,10 @@ const SearchResultsTotals = props => {
     return (
         <SearchResultsTotalsWrapper>
             <RenderIf isTrue={!!found}>
-                <div>
+                <ResultsLabel>
                     Showing <strong>{found}</strong> results for
                     <strong>“{search}”</strong> in all Categories
-                </div>
+                </ResultsLabel>
             </RenderIf>
             <RenderIf isTrue={!found}>
                 <div>0 results found</div>

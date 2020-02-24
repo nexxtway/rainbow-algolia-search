@@ -12,12 +12,17 @@ export const HeadingFlex = styled.div`
 `;
 
 export const RatingWrapper = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
     text-align: right;
     margin-bottom: 17px;
     flex-shrink: 0;
 
     @media screen and (max-width: 767px) {
-        text-align: left;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
     }
 `;
 

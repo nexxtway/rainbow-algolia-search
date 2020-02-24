@@ -19,11 +19,12 @@ const IntroLabelAlgolia = connectStateResults(IntroLabel);
 const BookImgAlgolia = connectStateResults(BookImg);
 const PresentationWrapperAlgolia = connectStateResults(PresentationWrapper);
 const HeadingLabelAlgolia = connectStateResults(HeadingLabel);
+const WrapperAlgolia = connectStateResults(Wrapper);
 
 const Home = () => {
     return (
         <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
-            <Wrapper>
+            <WrapperAlgolia>
                 <PresentationWrapperAlgolia>
                     <BookImgAlgolia />
                     <IntroLabelAlgolia>Find Books</IntroLabelAlgolia>
@@ -48,7 +49,7 @@ const Home = () => {
                         </DisplayIfResults>
                     </DisplayIfQueryInput>
                 </PresentationWrapperAlgolia>
-            </Wrapper>
+            </WrapperAlgolia>
         </InstantSearch>
     );
 };

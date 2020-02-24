@@ -8,11 +8,15 @@ const SearchResultsTotals = props => {
 
     return (
         <SearchResultsTotalsWrapper>
-            <RenderIf isTrue={found}>
-                Showing <strong>{found}</strong> results for
-                <strong>“{search}”</strong> in all Categories
+            <RenderIf isTrue={!!found}>
+                <div>
+                    Showing <strong>{found}</strong> results for
+                    <strong>“{search}”</strong> in all Categories
+                </div>
             </RenderIf>
-            <RenderIf isTrue={!found}>0 results found</RenderIf>
+            <RenderIf isTrue={!found}>
+                <div>0 results found</div>
+            </RenderIf>
         </SearchResultsTotalsWrapper>
     );
 };

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Card } from 'react-rainbow-components';
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled(Card)`
     position: relative;
@@ -8,7 +9,7 @@ export const Wrapper = styled(Card)`
     padding: 20px;
 `;
 
-export const LinkWrapper = styled.a`
+export const LinkWrapper = styled(Link)`
     display: flex;
     align-items: flex-start;
     text-decoration: none;
@@ -16,7 +17,6 @@ export const LinkWrapper = styled.a`
 
     &:hover {
         text-decoration: none;
-        color: #a4a7b5;
     }
 `;
 

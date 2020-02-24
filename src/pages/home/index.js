@@ -42,7 +42,9 @@ const Home = () => {
                     />
                     <RecentItem />
                     <DisplayIfQueryInput>
-                        <SearchResultsDescription />
+                        <DisplayIfResults>
+                            <SearchResultsDescription />
+                        </DisplayIfResults>
                     </DisplayIfQueryInput>
 
                     <DisplayIfQueryInput>

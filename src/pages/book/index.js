@@ -5,7 +5,6 @@ import { Spinner } from 'react-rainbow-components';
 import { itemDemo } from './dummyData';
 import { HeadingFlex, RatingWrapper, ReviewsFlexWrapper } from './styled';
 import Subtitle from '../../components/subtitle';
-import BackLink from '../../components/back-link';
 import ItemInfo from '../../components/item-info';
 import ItemRating from '../../components/item-rating';
 import ItemSummary from '../../components/item-summary';
@@ -14,8 +13,6 @@ import ItemReviewStats from '../../components/item-review-stats';
 import ItemReviewComments from '../../components/item-review-comments';
 import getRatingCount from '../../helpers/getRatingCount';
 import getStatsFromStars from '../../helpers/getStatsFromStars';
-
-const homeUrl = '/';
 
 const Book = () => {
     const { id } = useParams();
@@ -41,8 +38,6 @@ const Book = () => {
 
     return (
         <div>
-            <BackLink url={homeUrl} />
-
             <HeadingFlex>
                 <ItemInfo
                     title={title}

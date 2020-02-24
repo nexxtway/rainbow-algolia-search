@@ -3,8 +3,12 @@ import { Link as RouterLink } from 'react-router-dom';
 import BackArrowIcon from '../icons/back-arrow';
 
 export const Wrapper = styled.div`
-    margin-bottom: 43px;
+    display: flex;
+    align-items: flext-start;
+    margin: 0 auto 43px auto;
     width: 100%;
+    max-width: 1393px;
+    padding: 0 20px;
 `;
 
 export const Link = styled(RouterLink)`

@@ -11477,10 +11477,10 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-rainbow-components@1.12.0-canary.1c7e078:
-  version "1.12.0-canary.1c7e078"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.12.0-canary.1c7e078.tgz#ef1ff3383659e97cb91500d6cf811214b7273cbf"
-  integrity sha512-RaW/giPF8lHB++tWbQR8q6xJ+7bZ6Vlrmtkcfc4G7rohbVt002M0g2qLd1wc2DXJjHFmEHgHSu7QAU/IBk58mg==
+react-rainbow-components@1.12.0-canary.fa76c62:
+  version "1.12.0-canary.fa76c62"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-1.12.0-canary.fa76c62.tgz#f4e8e6701957d6a33da53d00effa2f16de6b3196"
+  integrity sha512-JGcvuR8RlC/4bZzr3MfpwSIW8rEFm0sh7Gr+rYTTzuv1s3acVzoDAg5nwAgdgpYxWgZV8Bq9MCQ8hvY6HV8MzA==
   dependencies:
     autosize "^4.0.2"
     chart.js "^2.7.3"

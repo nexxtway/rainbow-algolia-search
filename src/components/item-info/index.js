@@ -58,7 +58,7 @@ ItemInfo.propTypes = {
     publisher: PropTypes.string,
     language: PropTypes.string,
     cover: PropTypes.string,
-    size: PropTypes.string, // normal | large
+    size: PropTypes.oneOf(['normal', 'large']),
     className: PropTypes.string,
     style: PropTypes.object,
 };

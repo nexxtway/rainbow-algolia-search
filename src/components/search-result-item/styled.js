@@ -13,20 +13,10 @@ export const LinkWrapper = styled(Link)`
     display: flex;
     align-items: flex-start;
     text-decoration: none;
-    color: #a4a7b5;
 
-    &:hover {
-        text-decoration: none;
-    }
-
-    &:link {
-        text-decoration: none;
-    }
-
-    &:visited {
-        text-decoration: none;
-    }
-
+    &:hover,
+    &:link,
+    &:visited,
     &:active {
         text-decoration: none;
     }

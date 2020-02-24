@@ -48,6 +48,10 @@ const Book = () => {
     const ratingCount = getRatingCount(stars);
     const roundedAverageRating = Math.round(Number(averageRating));
     const ratingStats = getStatsFromStars(stars);
+    const relatedBooksNormalized = relatedBooks.map(book => ({
+        id: book.objectID,
+        ...book,
+    }));
 
     return (
         <div>
@@ -67,12 +71,7 @@ const Book = () => {
 
             <ItemSummary summary={summary} />
 
-            <ItemRelatedPurchases
-                items={relatedBooks.map(book => ({
-                    id: book.objectID,
-                    ...book,
-                }))}
-            />
+            <ItemRelatedPurchases items={relatedBooksNormalized} />
 
             <Subtitle>Customer Reviews</Subtitle>
             <ReviewsFlexWrapper>

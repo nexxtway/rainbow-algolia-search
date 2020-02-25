@@ -2,7 +2,6 @@ import React from 'react';
 import { InstantSearch, Configure, connectStateResults } from 'react-instantsearch-dom';
 import { HeadingLabel, ContainerMedium } from '../../styled';
 import { Wrapper, PresentationWrapper, BookImg, IntroLabel, InputWrapper } from './styled';
-import { SearchIcon } from '../../components/icons';
 import SearchResultItem from '../../components/search-result-item';
 import ResultsAlgolia from '../../algolia-components/results';
 import RecentItem from '../../components/recent-item';
@@ -38,8 +37,6 @@ const Home = () => {
                                     Find your favorite book among our <ResultCount /> books
                                 </HeadingLabelAlgolia>
                             }
-                            iconPosition="right"
-                            icon={<SearchIcon />}
                         />
                         <RecentItem />
                         <DisplayIfQueryInput>

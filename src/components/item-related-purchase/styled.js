@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 export const LinkWrapper = styled(Link)`
     overflow: hidden;
     position: relative;
-    width: auto;
+    width: 150px;
+    height: 170px;
     border-radius: 14px;
-    background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
     display: block;
-    max-width: 145px;
+    background-image: url(${props => props.backgroundImage});
 
     @media screen and (max-width: 991px) {
         margin-right: 20px;
@@ -29,14 +29,6 @@ export const Mask = styled.div`
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(transparent),
-        to(rgba(0, 0, 0, 0.5))
-    );
-    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.5));
 `;
 
 export const HiddenCover = styled.img`
@@ -50,4 +42,5 @@ export const Title = styled.h3`
     color: #fff;
     font-size: 12px;
     line-height: 1.4em;
+    text-shadow: 1px 1px 4px #3e3e3c;
 `;

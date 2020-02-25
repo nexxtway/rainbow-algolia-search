@@ -43,7 +43,7 @@ export const AvatarLabel = styled.p.attrs(props => {
     return props.theme.rainbow.palette;
 })`
     margin-left: 12px;
-    color: ${props => props.text.label};
+    color: ${props => props.text.main};
     font-size: 18px;
     line-height: 1em;
 `;

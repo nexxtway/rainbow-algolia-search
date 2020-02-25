@@ -13,8 +13,8 @@ import ItemSummary from '../../components/item-summary';
 import ItemRelatedPurchases from '../../components/item-related-purchases';
 import ItemReviewStats from '../../components/item-review-stats';
 import ItemReviewComments from '../../components/item-review-comments';
-import getRatingCount from '../../helpers/getRatingCount';
-import getStatsFromStars from '../../helpers/getStatsFromStars';
+import { getRatingCount } from '../../helpers/getRatingCount';
+import { getStatsFromStars } from '../../helpers/getStatsFromStars';
 import { fetchBooks } from '../../services/algolia';
 
 const homeUrl = '/';

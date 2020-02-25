@@ -1,5 +1,5 @@
 import { booksIndex } from '../../algoliaClient';
-import getNRandomFromArray from '../../helpers/getNRandomFromArray';
+import { getNRandomFromArray } from '../../helpers/getNRandomFromArray';
 
 export const fetchBooks = (query, except) => {
     return booksIndex

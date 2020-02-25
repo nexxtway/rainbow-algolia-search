@@ -10,7 +10,7 @@ export const Label = styled.p`
     display: inline-block;
     width: 100%;
     height: auto;
-    color: #a4a7b5;
+    color: ${props => props.theme.rainbow.palette.text.header};
     font-size: 12px;
     line-height: 1em;
 `;

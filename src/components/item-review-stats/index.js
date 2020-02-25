@@ -14,7 +14,7 @@ const ItemReviewStats = props => {
 
     return (
         <Wrapper className={className} style={style}>
-            <RatingCount>{ratingCount} Custom Ratings</RatingCount>
+            <RatingCount>{ratingCount} Customer Ratings</RatingCount>
             <RatingAverageWrapper>
                 <ItemRatingAverage
                     averageRating={Math.round(Number(averageRating))}

@@ -30,7 +30,7 @@ export const Details = styled.div`
     margin-left: 25px;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div.attrs(props => props.theme.rainbow.palette)`
     text-align: left;
     position: relative;
     top: -3px;
@@ -40,7 +40,7 @@ export const Title = styled.div`
     font-size: ${props => (hasLargeSize(props.size) ? '24px' : '18px')};
     line-height: 1.4em;
     font-weight: 700;
-    color: ${props => props.theme.rainbow.palette.brand.main};
+    color: ${props => (props.titleColor === 'main' ? props.text.main : props.brand.main)};
 
     @media screen and (max-width: 767px) {
         font-size: ${props => (hasLargeSize(props.size) ? '21px' : '16px')};

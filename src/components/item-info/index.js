@@ -13,17 +13,31 @@ import {
 } from './styled';
 
 const ItemInfo = props => {
-    const { title, author, publisher, language, cover, size, className, style } = props;
+    const {
+        title,
+        author,
+        publisher,
+        language,
+        cover,
+        size,
+        className,
+        style,
+        releaseDate,
+        titleColor,
+    } = props;
 
     const hasAuthor = !!author.length;
     const hasPublisher = !!publisher.length;
     const hasLanguage = !!language.length;
+    const hasReleaseDate = !!releaseDate;
 
     return (
         <Wrapper className={className} style={style}>
             <Img src={cover} size={size} />
             <Details>
-                <Title size={size}>{title}</Title>
+                <Title titleColor={titleColor} size={size}>
+                    {title}
+                </Title>
 
                 <RenderIf isTrue={hasAuthor}>
                     <Metadata size={size}>
@@ -45,6 +59,13 @@ const ItemInfo = props => {
                         <MetadataValue>{getLanguajeName(language)}</MetadataValue>
                     </Metadata>
                 </RenderIf>
+
+                <RenderIf isTrue={hasReleaseDate}>
+                    <Metadata size={size}>
+                        Release Date:
+                        <MetadataValue>{releaseDate}</MetadataValue>
+                    </Metadata>
+                </RenderIf>
             </Details>
         </Wrapper>
     );
@@ -54,6 +75,7 @@ export default ItemInfo;
 
 ItemInfo.propTypes = {
     title: PropTypes.string,
+    titleColor: PropTypes.oneOf(['main', 'brand']),
     author: PropTypes.string,
     publisher: PropTypes.string,
     language: PropTypes.string,
@@ -61,9 +83,11 @@ ItemInfo.propTypes = {
     size: PropTypes.oneOf(['normal', 'large']),
     className: PropTypes.string,
     style: PropTypes.object,
+    releaseDate: PropTypes.number,
 };
 ItemInfo.defaultProps = {
     title: '',
+    titleColor: 'brand',
     author: '',
     publisher: '',
     language: '',
@@ -71,4 +95,5 @@ ItemInfo.defaultProps = {
     size: 'normal',
     className: undefined,
     style: undefined,
+    releaseDate: 0,
 };

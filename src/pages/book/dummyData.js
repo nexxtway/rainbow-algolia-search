@@ -77,23 +77,16 @@ export const itemDemo = {
     ],
     reviews: [
         {
-            photo: 'https://via.placeholder.com/200/200',
+            photo: 'https://i.pravatar.cc/200/200?img=68',
             name: 'John Doe',
             rating: 3,
             review:
                 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet consequatur nulla, ab vel ex expedita consequuntur consectetur nisi ducimus error saepe magni ipsam fugiat minima nesciunt aliquid eum. Vel, ut.',
         },
         {
-            photo: 'https://via.placeholder.com/200/200',
-            name: 'John Doe',
+            photo: 'https://i.pravatar.cc/200/200?img=44',
+            name: 'Jane Doe',
             rating: 2,
-            review:
-                'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet consequatur nulla, ab vel ex expedita consequuntur consectetur nisi ducimus error saepe magni ipsam fugiat minima nesciunt aliquid eum. Vel, ut.',
-        },
-        {
-            photo: 'https://via.placeholder.com/200/200',
-            name: 'John Doe',
-            rating: 1,
             review:
                 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet consequatur nulla, ab vel ex expedita consequuntur consectetur nisi ducimus error saepe magni ipsam fugiat minima nesciunt aliquid eum. Vel, ut.',
         },

@@ -48,6 +48,7 @@ const Book = () => {
         averageRating,
         stars,
         summary,
+        releaseDate,
     } = currentBook.data;
     const ratingCount = getRatingCount(stars);
     const roundedAverageRating = Math.round(Number(averageRating));
@@ -65,10 +66,12 @@ const Book = () => {
                 <HeadingFlex>
                     <ItemInfo
                         title={title}
+                        titleColor="main"
                         author={authors}
                         language={language}
                         cover={cover}
                         categories={categories}
+                        releaseDate={releaseDate}
                         size="large"
                     />
                     <RatingWrapper>

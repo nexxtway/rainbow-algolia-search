@@ -13,6 +13,7 @@ const themes = {
         rainbow: {
             palette: {
                 brand: '#44D7B6',
+                success: '#ffb900',
             },
         },
     },
@@ -21,6 +22,7 @@ const themes = {
             palette: {
                 brand: '#44D7B6',
                 mainBackground: '#212121',
+                success: '#ffb900',
             },
         },
     },

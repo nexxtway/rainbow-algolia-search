@@ -14,13 +14,10 @@ const ItemRelatedPurchase = props => {
 
     if (hasId && hasTitle) {
         return (
-            <LinkWrapper to={url} className={className} style={style}>
+            <LinkWrapper to={url} className={className} style={style} backgroundImage={cover}>
                 <RenderIf isTrue={hasCover}>
                     <HiddenCover src={cover} />
                 </RenderIf>
-
-                <img src={cover} alt="" />
-
                 <Mask>
                     <Title className="related-title">{title}</Title>
                 </Mask>

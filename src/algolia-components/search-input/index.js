@@ -18,6 +18,7 @@ const SearchInputRainbowAlgoliaAdapter = props => {
             iconPosition="right"
             icon={<SearchIcon />}
             placeholder="What book are you looking for?"
+            autoComplete="off"
         />
     );
 };

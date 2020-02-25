@@ -1,6 +1,6 @@
-import getRatingCount from './getRatingCount';
+import { getRatingCount } from './getRatingCount';
 
-export default stars => {
+export const getStatsFromStars = stars => {
     const stats = [];
     const ratCount = getRatingCount(stars);
 

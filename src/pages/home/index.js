@@ -35,7 +35,7 @@ const Home = () => {
                         <InputWrapper
                             label={
                                 <HeadingLabelAlgolia>
-                                    Access <ResultCount /> books
+                                    Find your favorite book among our <ResultCount /> books
                                 </HeadingLabelAlgolia>
                             }
                             iconPosition="right"

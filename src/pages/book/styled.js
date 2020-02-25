@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MediaSizes } from '../../constants';
 
 export const HeadingFlex = styled.div`
     display: flex;
@@ -6,7 +7,7 @@ export const HeadingFlex = styled.div`
     justify-content: space-between;
     align-items: flex-start;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         flex-direction: column;
     }
 `;
@@ -18,7 +19,7 @@ export const RatingWrapper = styled.div`
     text-align: right;
     margin-bottom: 17px;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         width: 100%;
         justify-content: center;
         text-align: center;
@@ -28,7 +29,7 @@ export const RatingWrapper = styled.div`
 export const ReviewsFlexWrapper = styled.div`
     display: flex;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         flex-direction: column;
     }
 `;

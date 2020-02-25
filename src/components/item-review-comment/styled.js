@@ -1,5 +1,6 @@
 import { Avatar as RainbowAvatar } from 'react-rainbow-components';
 import styled from 'styled-components';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
     margin-bottom: 20px;
@@ -19,7 +20,7 @@ export const HeadingWrapper = styled.div`
     font-size: 18px;
     line-height: 1.56em;
 
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         flex-direction: column;
         align-items: flex-start;
     }
@@ -29,7 +30,7 @@ export const AvatarWrapper = styled.div`
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 479px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         margin-bottom: 5px;
     }
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Pagination from '../../algolia-components/pagination';
+import { MediaSizes } from '../../constants';
 
 export const PaginationItem = styled(Pagination)`
     padding-top: 20px;
@@ -9,7 +10,7 @@ export const PaginationItem = styled(Pagination)`
     align-items: center;
     transition: all 200ms ease;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         flex-direction: column;
     }
 `;

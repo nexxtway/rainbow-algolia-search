@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
     margin-bottom: 40px;
@@ -10,7 +11,7 @@ export const FlexWrapper = styled.div`
     margin-bottom: 40px;
     justify-content: space-between;
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         flex-wrap: wrap;
         justify-content: flex-start;
     }

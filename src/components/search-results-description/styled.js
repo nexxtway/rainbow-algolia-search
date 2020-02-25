@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MediaSizes } from '../../constants';
 
 export const FlexWrapper = styled.div`
     display: flex;
@@ -7,13 +8,13 @@ export const FlexWrapper = styled.div`
     align-items: center;
     transition: all 200ms ease;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         flex-direction: column;
     }
 `;
 
 export const DescriptionWrapper = styled.div`
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         flex-direction: column;
     }
 `;

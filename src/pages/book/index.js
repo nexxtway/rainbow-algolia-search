@@ -81,7 +81,7 @@ const Book = () => {
 
                 <ItemSummary summary={summary} />
 
-            <ItemRelatedPurchases items={relatedBooksNormalized} />
+                <ItemRelatedPurchases items={relatedBooksNormalized} />
                 <Subtitle>Customer Reviews</Subtitle>
                 <ReviewsFlexWrapper>
                     <ItemReviewStats

@@ -25,7 +25,6 @@ const WrapperAlgolia = connectStateResults(Wrapper);
 
 const Home = () => {
     return (
-
         <ContainerMedium>
             <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
                 <WrapperAlgolia>
@@ -36,7 +35,7 @@ const Home = () => {
                         <InputWrapper
                             label={
                                 <HeadingLabelAlgolia>
-                                    Access <ResultCount /> books
+                                    Find your favorite book among our <ResultCount /> books
                                 </HeadingLabelAlgolia>
                             }
                             iconPosition="right"
@@ -48,7 +47,7 @@ const Home = () => {
                                 <SearchResultsDescription />
                             </DisplayIfResults>
                         </DisplayIfQueryInput>
-      
+
                         <DisplayIfQueryInput>
                             <DisplayIfResults>
                                 <ResultsAlgolia component={SearchResultItem} />

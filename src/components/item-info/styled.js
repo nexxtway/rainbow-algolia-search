@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MediaSizes } from '../../constants';
 
 const hasLargeSize = size => {
     return size && size === 'large';
@@ -8,11 +9,11 @@ export const Wrapper = styled.div`
     display: flex;
     padding-right: 20px;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         padding-right: 15px;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         width: 100%;
         margin-bottom: 21px;
         padding-right: 0;

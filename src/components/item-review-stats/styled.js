@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import ItemRating from '../item-rating';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
     width: 100%;
     max-width: 187px;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         max-width: 193px;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         max-width: 187px;
         margin-bottom: 40px;
     }
@@ -27,19 +28,19 @@ export const RatingAverageWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: ${MediaSizes.sm.width}) {
         flex-direction: row;
         align-items: center;
     }
 `;
 
 export const ItemRatingAverage = styled(ItemRating)`
-    @media screen and (max-width: 991px) {
+    @media screen and (max-width: ${MediaSizes.md.width}) {
         margin-bottom: 4px;
     }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -19,10 +20,8 @@ export const Logo = styled.img`
     width: 48px;
     transition: all 350ms ease;
 
-    @media screen and (max-width: 767px) {
-        .logo {
-            width: 38px;
-        }
+    @media screen and (max-width: ${MediaSizes.md.width}) {
+        width: 38px;
     }
 `;
 

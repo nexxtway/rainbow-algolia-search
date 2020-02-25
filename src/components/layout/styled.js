@@ -11,11 +11,8 @@ export const MainWrapper = styled.main`
     min-height: 100vh;
 `;
 
-export const Container = styled.main`
+export const ChildrenWrapper = styled.main`
     width: 100%;
-    max-width: 1030px;
-    margin-right: auto;
-    margin-left: auto;
     padding-right: 20px;
     padding-left: 20px;
 `;

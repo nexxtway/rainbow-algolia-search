@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
     margin: 0 auto 43px auto;
     width: 100%;
     max-width: 1393px;
-    padding: 0 20px;
 `;
 
 export const Link = styled(RouterLink)`
@@ -19,6 +18,8 @@ export const Link = styled(RouterLink)`
     justify-content: flex-start;
     align-items: center;
 
+    &:active,
+    &:visited,
     &:hover {
         text-decoration: none;
         color: #44d7b6;

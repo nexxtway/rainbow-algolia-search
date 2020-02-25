@@ -1,7 +1,7 @@
 import React from 'react';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import PropTypes from 'prop-types';
-import { Rating, Label } from './styled';
+import { Wrapper, Rating, Label } from './styled';
 
 const ItemRating = props => {
     const { ratingCount, averageRating, hideLabel, className, style } = props;
@@ -10,13 +10,13 @@ const ItemRating = props => {
     const showLabel = hasRatingCount && !hideLabel;
 
     return (
-        <div className={className} style={style}>
+        <Wrapper className={className} style={style}>
             <Rating value={String(averageRating)} />
 
             <RenderIf isTrue={showLabel}>
                 <Label>{ratingCount} Ratings</Label>
             </RenderIf>
-        </div>
+        </Wrapper>
     );
 };
 

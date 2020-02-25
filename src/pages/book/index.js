@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useDocOnce } from 'rainbow-firebase-hooks';
 import { Spinner } from 'react-rainbow-components';
 import { itemDemo } from './dummyData';
+import { ContainerMedium } from '../../styled';
 import { HeadingFlex, RatingWrapper, ReviewsFlexWrapper } from './styled';
+import BackLink from '../../components/back-link';
 import Subtitle from '../../components/subtitle';
 import ItemInfo from '../../components/item-info';
 import ItemRating from '../../components/item-rating';
@@ -14,6 +16,8 @@ import ItemReviewComments from '../../components/item-review-comments';
 import getRatingCount from '../../helpers/getRatingCount';
 import getStatsFromStars from '../../helpers/getStatsFromStars';
 import { fetchBooks } from '../../services/algolia';
+
+const homeUrl = '/';
 
 const Book = () => {
     const { id } = useParams();
@@ -54,35 +58,41 @@ const Book = () => {
     }));
 
     return (
-        <div>
-            <HeadingFlex>
-                <ItemInfo
-                    title={title}
-                    author={authors}
-                    language={language}
-                    cover={cover}
-                    categories={categories}
-                    size="large"
-                />
-                <RatingWrapper>
-                    <ItemRating averageRating={roundedAverageRating} ratingCount={ratingCount} />
-                </RatingWrapper>
-            </HeadingFlex>
+        <>
+            <BackLink url={homeUrl} />
 
-            <ItemSummary summary={summary} />
+            <ContainerMedium>
+                <HeadingFlex>
+                    <ItemInfo
+                        title={title}
+                        author={authors}
+                        language={language}
+                        cover={cover}
+                        categories={categories}
+                        size="large"
+                    />
+                    <RatingWrapper>
+                        <ItemRating
+                            averageRating={roundedAverageRating}
+                            ratingCount={ratingCount}
+                        />
+                    </RatingWrapper>
+                </HeadingFlex>
+
+                <ItemSummary summary={summary} />
 
             <ItemRelatedPurchases items={relatedBooksNormalized} />
-
-            <Subtitle>Customer Reviews</Subtitle>
-            <ReviewsFlexWrapper>
-                <ItemReviewStats
-                    averageRating={averageRating}
-                    ratingCount={ratingCount}
-                    ratingStats={ratingStats}
-                />
-                <ItemReviewComments reviews={itemDemo.reviews} />
-            </ReviewsFlexWrapper>
-        </div>
+                <Subtitle>Customer Reviews</Subtitle>
+                <ReviewsFlexWrapper>
+                    <ItemReviewStats
+                        averageRating={averageRating}
+                        ratingCount={ratingCount}
+                        ratingStats={ratingStats}
+                    />
+                    <ItemReviewComments reviews={itemDemo.reviews} />
+                </ReviewsFlexWrapper>
+            </ContainerMedium>
+        </>
     );
 };
 

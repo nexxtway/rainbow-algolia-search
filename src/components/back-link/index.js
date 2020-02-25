@@ -6,7 +6,7 @@ import { Wrapper, ArrowImg, Link } from './styled';
 const BackLink = props => {
     const { url, className, style } = props;
 
-    const hasUrl = !!url.length;
+    const hasUrl = !!url;
 
     return (
         <RenderIf isTrue={hasUrl}>

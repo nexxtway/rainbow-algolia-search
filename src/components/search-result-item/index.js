@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
 import ItemCategories from '../item-categories';
 import ItemRating from '../item-rating';
 import ItemInfo from '../item-info';
-import { Wrapper, LinkWrapper, FlexWrapper, FlexRight, RatingWrapper } from './styled';
+import { Wrapper, LinkWrapper, FlexWrapper, FlexRight, CategoriesWrapper } from './styled';
 
 const SearchResultItem = props => {
     const {
@@ -22,6 +23,8 @@ const SearchResultItem = props => {
 
     const bookUrl = `/book/${objectID}`;
 
+    const hasCategories = !!categories.length;
+
     return (
         <Wrapper className={className} style={style}>
             <LinkWrapper to={bookUrl}>
@@ -36,13 +39,16 @@ const SearchResultItem = props => {
                         />
                     </div>
                     <FlexRight>
-                        <RatingWrapper>
-                            <ItemRating
-                                averageRating={Math.round(Number(averageRating))}
-                                ratingCount={ratingCount}
-                            />
-                        </RatingWrapper>
-                        <ItemCategories categories={categories} />
+                        <ItemRating
+                            averageRating={Math.round(Number(averageRating))}
+                            ratingCount={ratingCount}
+                        />
+
+                        <RenderIf isTrue={hasCategories}>
+                            <CategoriesWrapper>
+                                <ItemCategories categories={categories} />
+                            </CategoriesWrapper>
+                        </RenderIf>
                     </FlexRight>
                 </FlexWrapper>
             </LinkWrapper>

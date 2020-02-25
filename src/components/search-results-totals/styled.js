@@ -12,3 +12,7 @@ export const SearchResultsTotalsWrapper = styled.div`
         font-family: ${LatoBold};
     }
 `;
+
+export const ResultsLabel = styled.p`
+    margin-bottom: 15px;
+`;

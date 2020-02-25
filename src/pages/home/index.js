@@ -1,6 +1,6 @@
 import React from 'react';
 import { InstantSearch, Configure, connectStateResults } from 'react-instantsearch-dom';
-import { HeadingLabel } from '../../styled';
+import { HeadingLabel, ContainerMedium } from '../../styled';
 import { Wrapper, PresentationWrapper, BookImg, IntroLabel, InputWrapper } from './styled';
 import { SearchIcon } from '../../components/icons';
 import SearchResultItem from '../../components/search-result-item';
@@ -25,42 +25,45 @@ const WrapperAlgolia = connectStateResults(Wrapper);
 
 const Home = () => {
     return (
-        <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
-            <WrapperAlgolia>
-                <PresentationWrapperAlgolia>
-                    <BookImgAlgolia />
-                    <IntroLabelAlgolia>Find Books</IntroLabelAlgolia>
-                    <Configure hitsPerPage={3} />
-                    <InputWrapper
-                        label={
-                            <HeadingLabelAlgolia>
-                                Find your favorite book among our <ResultCount /> books
-                            </HeadingLabelAlgolia>
-                        }
-                        iconPosition="right"
-                        icon={<SearchIcon />}
-                    />
-                    <RecentItem />
-                    <DisplayIfQueryInput>
-                        <DisplayIfResults>
-                            <SearchResultsDescription />
-                        </DisplayIfResults>
-                    </DisplayIfQueryInput>
 
-                    <DisplayIfQueryInput>
-                        <DisplayIfResults>
-                            <ResultsAlgolia component={SearchResultItem} />
-                        </DisplayIfResults>
-                    </DisplayIfQueryInput>
+        <ContainerMedium>
+            <InstantSearch indexName="rainbow-books" searchClient={searchClient}>
+                <WrapperAlgolia>
+                    <PresentationWrapperAlgolia>
+                        <BookImgAlgolia />
+                        <IntroLabelAlgolia>Find Books</IntroLabelAlgolia>
+                        <Configure hitsPerPage={3} />
+                        <InputWrapper
+                            label={
+                                <HeadingLabelAlgolia>
+                                    Access <ResultCount /> books
+                                </HeadingLabelAlgolia>
+                            }
+                            iconPosition="right"
+                            icon={<SearchIcon />}
+                        />
+                        <RecentItem />
+                        <DisplayIfQueryInput>
+                            <DisplayIfResults>
+                                <SearchResultsDescription />
+                            </DisplayIfResults>
+                        </DisplayIfQueryInput>
+      
+                        <DisplayIfQueryInput>
+                            <DisplayIfResults>
+                                <ResultsAlgolia component={SearchResultItem} />
+                            </DisplayIfResults>
+                        </DisplayIfQueryInput>
 
-                    <DisplayIfQueryInput>
-                        <DisplayIfNotResults>
-                            <NoResult />
-                        </DisplayIfNotResults>
-                    </DisplayIfQueryInput>
-                </PresentationWrapperAlgolia>
-            </WrapperAlgolia>
-        </InstantSearch>
+                        <DisplayIfQueryInput>
+                            <DisplayIfNotResults>
+                                <NoResult />
+                            </DisplayIfNotResults>
+                        </DisplayIfQueryInput>
+                    </PresentationWrapperAlgolia>
+                </WrapperAlgolia>
+            </InstantSearch>
+        </ContainerMedium>
     );
 };
 

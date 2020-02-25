@@ -17,6 +17,7 @@ const SearchInputRainbowAlgoliaAdapter = props => {
             onChange={event => refine(event.currentTarget.value)}
             iconPosition="right"
             icon={<SearchIcon />}
+            placeholder="What book are you looking for?"
         />
     );
 };

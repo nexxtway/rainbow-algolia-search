@@ -31,7 +31,7 @@ const Book = () => {
             const bookAuthors = currentBook.data.authors.split(',');
             const firstAuthor = bookAuthors[0];
 
-            fetchBooks(firstAuthor).then(books => {
+            fetchBooks(firstAuthor, currentBook.id).then(books => {
                 setRelatedBooks(books);
             });
         }

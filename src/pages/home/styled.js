@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { AlgoliaLogo, BookIcon } from '../../components/icons';
+import { BookIcon } from '../../components/icons';
+import AlgoliaLogo from '../../components/algolia-logo';
 import InputSearch from '../../algolia-components/search-input';
 import { MediaSizes } from '../../constants';
 

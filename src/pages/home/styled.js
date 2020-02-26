@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import InputSearch from '../../algolia-components/search-input';
 import { BookIcon } from '../../components/icons';
+import AlgoliaLogo from '../../components/algolia-logo';
+import InputSearch from '../../algolia-components/search-input';
 import { MediaSizes } from '../../constants';
 
 export const Wrapper = styled.div`
@@ -88,4 +89,8 @@ export const RecentItem = styled.a`
 export const InputWrapper = styled(InputSearch)`
     margin: 0 auto 16px auto;
     max-width: 860px;
+`;
+
+export const StyledAlgoliaLogo = styled(AlgoliaLogo)`
+    color: ${props => props.theme.rainbow.palette.text.header};
 `;

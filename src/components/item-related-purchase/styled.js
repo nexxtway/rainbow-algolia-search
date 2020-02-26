@@ -30,6 +30,7 @@ export const Mask = styled.div`
     padding-right: 15px;
     padding-bottom: 15px;
     padding-left: 15px;
+    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8));
 `;
 
 export const HiddenCover = styled.img`

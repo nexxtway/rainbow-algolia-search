@@ -1,7 +1,14 @@
 import React from 'react';
 import { InstantSearch, Configure, connectStateResults } from 'react-instantsearch-dom';
 import { HeadingLabel, ContainerMedium } from '../../styled';
-import { Wrapper, PresentationWrapper, BookImg, IntroLabel, InputWrapper } from './styled';
+import {
+    Wrapper,
+    PresentationWrapper,
+    BookImg,
+    IntroLabel,
+    InputWrapper,
+    StyledAlgoliaLogo,
+} from './styled';
 import SearchResultItem from '../../components/search-result-item';
 import ResultsAlgolia from '../../algolia-components/results';
 import RecentItem from '../../components/recent-item';
@@ -55,6 +62,10 @@ const Home = () => {
                             <DisplayIfNotResults>
                                 <NoResult />
                             </DisplayIfNotResults>
+                        </DisplayIfQueryInput>
+
+                        <DisplayIfQueryInput>
+                            <StyledAlgoliaLogo />
                         </DisplayIfQueryInput>
                     </PresentationWrapperAlgolia>
                 </WrapperAlgolia>

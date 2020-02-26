@@ -6,3 +6,4 @@ export { default as MoonIcon } from './moon';
 export { default as SunIcon } from './sun';
 export { default as SearchIcon } from './search';
 export { default as NoResultIcon } from './no-result-icon';
+export { default as AlgoliaLogo } from './algolia-logo';
